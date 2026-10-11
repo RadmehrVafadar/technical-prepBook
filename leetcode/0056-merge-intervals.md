@@ -1,9 +1,13 @@
-## Problem title
+- Confidence: 1/5
+- Result: not finished
+- Workon: Restate overlap and what the merged output must preserve before proposing an approach.
 
-56. Merge Intervals
+# 56. Merge Intervals
 
 ## Users Own notes
 
-## The users code/solution
+## Code
+
+## Session summary
 
 ## Feedback
