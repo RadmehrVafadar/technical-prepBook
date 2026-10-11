@@ -1,0 +1,97 @@
+53. Maximum Subarray
+
+Session: 2026-10-10
+Language: Python 3 (shown in screenshot)
+Mode: Interview (requested by user)
+Time budget: 30 minutes, agreed by user.
+Target: Intern
+Status: Interview attempt complete; user reports running the solution successfully.
+Prior exposure: Screenshot marks problem Solved; details unknown.
+
+Task: Given an integer array nums, return the largest sum of a contiguous subarray.
+Constraints: Not visible in provided screenshot.
+Visible examples: [-2,1,-3,4,-1,2,1,-5,4] -> 6; [1] -> 1; [5,4,-1,7,8] -> 23.
+
+User approach and reasoning:
+- Restated input as an unsorted list of integers, possibly positive or negative, and output as the largest subarray sum (an integer).
+- Observed that with all positive values, the whole array supplies the largest sum.
+- Identified negative values as the complication; about to describe a brute-force approach.
+- Contiguity and nonempty requirement were initially omitted; user later noticed the nonempty requirement while debugging all-negative behavior.
+- Proposed enumerating every possible subarray with two loops, calculating each sum, and comparing it with a running maximum.
+- Summation method and resulting complexity have not yet been specified; no implementation.
+- Subsequently explained three-loop enumeration with sums recomputed as O(n^3) time, and extending a running sum for each start as O(n^2) time.
+- Stated O(1) auxiliary space for both when iterating directly without constructing subarrays. This analysis is sound for the described implementations.
+- These improvements were derived independently; interviewer asked only for complexity analysis.
+- Independently noted repeated work and that sorting would violate the subarray's original order.
+- Corrected maximum initialization from zero to negative infinity because the result may be negative.
+- Explored a two-pointer/sliding-window description with a current sum and overall maximum.
+- Independently argued that a negative accumulated sum reduces any future extension, so it can be discarded.
+- Reset rule was initially ambiguous (negative current sum versus current sum below overall maximum); after a focused question, user settled on discarding a negative running sum.
+- Some verbal dry-run arithmetic/state was inconsistent, including saying maximum remains three after previously reaching four. No code or tests yet.
+- Claimed O(n) time and O(1) auxiliary space for proposed optimized scan; implementation needed to verify.
+- In response to a clarification question, specified resetting only when the accumulated sum becomes negative and starting the new subarray at the next element. Earlier below-maximum condition is no longer part of the stated rule.
+Hints received: No algorithmic hint or solution was supplied. Several interviewer questions focused the user on the exact reset rule, all-negative dry run, and aggregate pointer movement.
+Solution code (user supplied; user reports running it successfully; run not directly observed by coach):
+class Solution:
+    def maxSubArray(self, nums: list[int]) -> int:
+        # [-2, 1, -3, 4, 2, 1, -5, 4]
+        max_sum = float('-inf')
+        cur_sum = 0
+        left = 0
+        for right in range(len(nums)):
+            cur_sum += nums[right]
+
+            max_sum = max(max_sum, cur_sum)
+            while cur_sum < 0:
+                cur_sum -= nums[left]
+                left += 1
+
+        return max_sum
+Correctness explanation: User reasoned that a negative running prefix cannot improve any future subarray and should be discarded, and that max_sum must be updated before discarding it to preserve all-negative candidates. This was directionally sound, though the invariant was not stated precisely and took interviewer prompting.
+Time complexity: O(n), because the right pointer and left pointer each advance at most n times total. User reached this conclusion after interviewer questions; initially misclassified nested loops as O(n^2).
+Auxiliary-space complexity: O(1), using scalar state and indices.
+Implementation status: Code appears consistent with the intended scan for the stated nonempty-array problem, but it was not executed. Empty input behavior is not handled as an integer result; standard problem constraints require a nonempty array, though screenshot constraints were not visible.
+Tests and observed results: User reports running the code and says it is correct. Test inputs, outputs, and execution evidence were not provided, so specific test coverage is unknown. The verbal dry run of [-1,-4] is recorded below.
+User dry run of [-1, -4]:
+- After first iteration: cur_sum = 0, max_sum = -1, left = 1.
+- After second iteration: cur_sum = 0, max_sum = -1, left = 2.
+- Returned -1. Trace is correct; this is a verbal dry run, not observed execution.
+- Explained why updating the maximum before discarding negative values preserves the all-negative answer.
+Implementation discussion:
+- Considered a dictionary/prefix-sum tracker, then questioned whether it was necessary.
+- Revisited resetting below the maximum, then independently used a large future positive value to explain why a positive running sum should be retained even below the previous maximum.
+- Initially assumed an empty subarray was allowed and the answer could be initialized to zero; subsequently read the nonempty requirement and recognized the all-negative failure.
+- Described removing leftmost elements while the current sum is negative, and considered the placement of the maximum update.
+- Verbally traced [-1, -4] and identified that comparing against an empty sum of zero is incorrect. Transcript mentions a negative-one failure, but executed code and output have not been inspected.
+- User's final supplied code is available above. No edits were made to the user's code.
+Feedback and next review steps: Practice stating the invariant and amortized pointer bound before coding. Verify the supplied implementation on mixed-sign, all-negative, and single-element cases in a future review.
+
+Mock interview evaluation (provisional only if user adds more evidence):
+Advance this person to the next round? No. For an intern-level screen, you found a plausible linear approach and wrote a coherent implementation, but needed repeated interviewer prompts to establish the loop bound and did not execute the code.
+Technical: 3/4. You supplied a compact Python implementation with O(1) state, initialized the answer to negative infinity, correctly dry-ran [-1,-4], and later reported that you ran the code successfully. The run and test cases were not directly observed, and your complexity analysis needed substantial prompting; no runtime defect was identified.
+Problem solving: 2/4. You independently moved from cubic to quadratic enumeration, identified the cost of recomputing sums, derived the negative-prefix discard idea, and recognized the all-negative initialization issue. The reset rule and O(n) aggregate analysis required multiple focused questions; the proof stayed informal.
+Communication: 2/4. Your initial restatement and all-negative dry run were understandable. During approach selection, the explanation became repetitive and mixed competing reset rules; the complexity explanation treated loop nesting as multiplicative even after noting each pointer advances at most n times. You eventually corrected the conclusion.
+Things you did well:
+- You stated that the answer can be negative and corrected the maximum initialization to negative infinity.
+- You noticed repeated work in the quadratic baseline and proposed retaining a running sum.
+- You used a future large positive value to reason that a positive current sum should not be discarded merely because it is below the best sum so far.
+- Your verbal dry run of [-1,-4] returned -1 and tracked left reaching 2.
+Areas of improvement:
+- Correctness: State the invariant before coding. Explain that the retained running sum is a useful suffix candidate and that a negative prefix cannot improve any extension. You initially described resetting based on comparison with the global maximum, which would not be the right criterion.
+- Complexity: Do not infer O(n^2) from a loop nested inside another loop automatically. Count total pointer movements; here each pointer advances at most n times.
+- Testing: You dry-ran one all-negative input, but did not execute the code or test the visible example, a single element, or an all-positive case.
+- Communication: Reduce repeated restatement. Give the rule, one reason it is safe, then the complexity argument.
+My advice: Highest priority for your next attempt: before coding, state one sentence for the invariant and one sentence bounding total pointer movement. Then test one all-negative case and one mixed-sign case by hand. For this code, predict the return value on [-2,1,-3,4,2,1,-5,4] and explain why the inner while loop does not make the total runtime quadratic.
+Background context: Intern target; Python 3; about 90 LeetCode problems solved in Python per project context; interview mode; 30-minute budget agreed. The screenshot marked the problem solved, but whether it was previously seen or independently solved is unknown. No full solution or algorithm-name hint was given; focused questions guided reset semantics and complexity analysis.
+Time breakdown: Timing not measured reliably.
+Session notes:
+1. User restated the task and identified negative values as the complication.
+2. User described O(n^3) recomputation and O(n^2) running-sum enumeration, both O(1) space.
+3. User reasoned toward a linear scan, first with an unclear reset condition, then specified discarding a negative running sum.
+4. User initially assumed an empty subarray could count; on noticing the nonempty requirement, used negative infinity for the maximum.
+5. User supplied code that updates max_sum before removing left-side values while cur_sum is negative.
+6. User correctly dry-ran [-1,-4] and returned -1.
+7. User first called the nested-loop scan O(n^2), then concluded O(n) after several questions about whether left resets and how often each pointer advances.
+8. User said the final explanation was already their answer; the correctness rationale was accepted as directionally sound but not fully formalized.
+9. After the initial evaluation, user clarified that they ran the code and found it correct. Specific test inputs and results were not shared; evaluation updated to reflect this report.
+Self-review: Not yet provided. Ask: “What do you think went well, where did you get stuck, and what would you change next time?”

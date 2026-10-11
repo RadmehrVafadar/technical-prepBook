@@ -1,0 +1,94 @@
+Problem: 207 - Course Schedule
+Task summary: Given numCourses courses labeled 0 through numCourses - 1 and prerequisite pairs [course, prerequisite], return whether all courses can be completed.
+Language: Python 3
+Status: Completed working solution submitted by the user; assisted by coaching and a solution video.
+Prior exposure: Unknown before this attempt; user watched a video during the attempt.
+Mode: Coaching; target level: intern; approximately 90 Python LeetCode problems solved.
+
+User's approach and reasoning:
+- Independently restated prerequisite direction and identified a cycle as the obstacle to completing all courses.
+- Initially assumed each course could have only one prerequisite and that relationship count could not exceed course count. Coaching corrected those assumptions.
+- Proposed a map from each course to its prerequisites and recursively following prerequisite chains.
+- Identified that revisiting a course on the current branch signals a cycle.
+- Revised the map values to lists to preserve multiple prerequisites.
+- Initially combined branches as though one successful prerequisite were sufficient. Coaching clarified that all prerequisites must be completable.
+- Needed repeated guidance distinguishing unchecked, currently exploring, and fully checked courses. Proposed -1 for a state but later described it as a loop result, leaving the transition explanation unresolved during voice practice.
+- Correctly argued that a course with no prerequisites can be marked safe immediately; the assistant corrected its earlier overly restrictive initialization advice.
+- Later watched a solution video and submitted the code below. Independent reconstruction of its full explanation is still pending.
+
+Hints and assistance received:
+- Correction of the multiple-prerequisite assumption.
+- Diagnostic questions about current-path visits versus visits in other branches.
+- Correction that a cycle in any required branch prevents completion.
+- Explicit three-state conceptual hint and guidance on when to mark a course exploring or safe.
+- Explanation that finding a cycle returns False through recursive calls.
+- External solution video; specific video and extent of code adaptation unknown.
+
+Final user-submitted code:
+class Solution:
+    def canFinish(self, numCourses: int, prerequisites: list[list[int]]) -> bool:
+        preMap = {i:[] for i in range(numCourses)}
+        for crs, pre in prerequisites:
+            preMap[crs].append(pre)
+
+        visited = set()
+        def dfs(crs):
+            if preMap[crs] == []:
+                return True
+            if crs in visited:
+                return False
+
+            visited.add(crs)
+            for i in range(len(preMap[crs])):
+                if not dfs(preMap[crs][i]): return False
+
+            visited.remove(crs)
+            preMap[crs] = []
+            return True
+
+        for crs in range(numCourses):
+            if not dfs(crs): return False
+        return True
+
+Correctness explanation (assistant analysis of submitted code):
+- preMap preserves every prerequisite relationship, with edges from a course to its prerequisites.
+- visited represents the active recursion path, rather than all courses ever examined. Adding a course before exploring and removing it after successful exploration maintains this invariant.
+- Reaching a course already on that path closes a directed cycle, so its requirements cannot be satisfied.
+- An empty prerequisite list means either the course originally had no prerequisites or all its prerequisites have already been checked successfully.
+- A course is marked safe by clearing its list only after every prerequisite returns True. A single False propagates immediately, which correctly implements the requirement that every prerequisite must be possible.
+- Safe courses can be reused across branches without being mistaken for a cycle or repeatedly expanding their prerequisites.
+- The outer loop checks every course, including disconnected components. Therefore the function returns True exactly when there is no directed cycle.
+- On failure, some courses remain in visited. This is harmless because failure immediately propagates and the entire function returns False.
+
+Time and auxiliary-space complexity:
+- Let V = numCourses and E = len(prerequisites).
+- Time: O(V + E). Each course's list is fully expanded at most once before being cleared; each prerequisite edge is processed at most once during that expansion. Building the map also costs O(V + E).
+- Auxiliary space: O(V + E) for the prerequisite map, active-path set, and recursion stack. The stack and set can each reach O(V).
+- Python implementation limitation: a sufficiently long prerequisite chain can exceed the interpreter recursion limit. No runtime failure was observed or reported in this session.
+
+Tests and observed results:
+- No execution results or LeetCode submission outcome reported by the user.
+- Assistant did not execute tests. Correctness explanation is based on code inspection.
+- Initial screenshot example: numCourses = 2, prerequisites = [[1,0]], expected True; not an observed execution result.
+
+Feedback and next review steps:
+- Main demonstrated strength: independently connected impossible prerequisites to cycles and correctly challenged the claim that no-prerequisite courses must remain unvisited.
+- Main learning gap: distinguishing active-path state from completed work and combining all required branches correctly.
+- Completion is assisted; independent mastery has not yet been demonstrated.
+- User explicitly wants to revisit this problem and learn other approaches.
+- Next step: explain in the user's own words what visited means, why removal is necessary, and why clearing preMap[crs] is safe.
+- Revisit from a blank editor without the video or notes; justify the invariant before implementing.
+- Compare this implementation with DFS using a separate three-state array so prerequisite data remains intact.
+- Learn a queue-based approach using counts of unfinished prerequisites (Kahn's topological sort); derive why processing fewer than V courses proves a cycle.
+- Explore iterative DFS as an alternative that avoids Python recursion depth limits.
+- Targeted review cases: a shared prerequisite across branches; one safe branch and one cyclic branch; a cycle in a disconnected component; no prerequisites; a long chain. Predict and dry-run results before execution.
+- Review date not scheduled; no reminder requested.
+- Formal evaluation deferred until the user's interview-ready explanation, unless the user requests otherwise. Self-review not yet provided.
+
+Compact progress log:
+- Problem/technique: 207 Course Schedule; directed cycle detection with recursive DFS and memoized safe courses.
+- Prior exposure: Unknown; watched a video during this attempt.
+- Independence: Assisted by coaching and video.
+- Strength: Derived cycle obstruction independently.
+- Weakness: Active-path state and all-prerequisite logic required guidance.
+- Exercise/review target: Reconstruct independently, then derive the prerequisite-count queue approach.

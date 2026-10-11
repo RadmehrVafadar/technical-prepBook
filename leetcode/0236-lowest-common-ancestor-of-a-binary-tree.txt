@@ -1,0 +1,50 @@
+Problem: 236 - Lowest Common Ancestor of a Binary Tree
+
+Attempt setup - 2026-10-10
+Initial status: Started; unfinished. Setup recorded only.
+Task summary: Find the lowest node in a binary tree that has both given nodes as descendants. A node counts as a descendant of itself.
+Language: Python 3
+Session mode: Interview mode
+Target interview level: Intern
+Experience: About 90 LeetCode problems solved in Python
+Timing: User tracks time; no agreed budget required. No measured times provided.
+Prior familiarity with this problem: Unknown
+Constraints: Not visible; not yet recorded
+
+User approach and reasoning: Not yet provided.
+Hints received: None so far.
+Solution code: Not yet provided.
+Correctness explanation: Not yet provided.
+Time complexity: Not yet established.
+Auxiliary-space complexity: Not yet established.
+Tests and observed results: No tests run or results provided.
+Independence assessment: Not yet assessable; no solution work observed.
+Feedback: No evaluation yet.
+Next review steps: Record the user's clarification, approach, implementation, and testing as they become available.
+
+Solution update - 2026-10-10
+Status: Assisted solution complete; user considers the submitted solution working.
+Assistance: User explicitly stated they searched up the answer. This is not an independently completed solution.
+User explanation: DFS recursive traversal. Return the current target upward when found. Combine results from the left and right subtrees. If both results are non-null, the current node is the LCA; otherwise propagate whichever result exists.
+
+User-provided solution code (Python 3):
+class Solution:
+    def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
+        if not root:
+            return None
+        if root == p or root == q:
+            return root
+        l = self.lowestCommonAncestor(root.left, p, q)
+        r = self.lowestCommonAncestor(root.right, p, q)
+        if l and r:
+            return root
+        else:
+            return l or r
+
+Correctness explanation: The problem guarantees that p and q exist in the tree. An empty subtree returns None. The target-node identity check is written as root == p or root == q; reaching a target returns that node, including when it is an ancestor of the other target. Each recursive call returns a target found in its subtree or the LCA if both targets occur there. Non-null results from both child subtrees place the targets on opposite sides, making the current node their lowest common ancestor. With only one non-null result, that result is propagated upward.
+Time complexity: O(n), where n is the number of tree nodes; each visited node is processed once.
+Auxiliary-space complexity: O(h) for the recursion stack, where h is the tree height; O(n) in a skewed tree.
+Tests and observed results: Tests were not discussed or run in this session.
+Prior familiarity: Still unknown.
+Session context: Python 3; intern target; about 90 Python LeetCode problems solved; interview mode; user tracks timing. No measured times provided.
+Feedback and next review steps: No evaluation or transfer exercise conducted; user requested saving the solution and moving on.
