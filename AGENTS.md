@@ -20,6 +20,16 @@ ambiguous, and follow any explicit language choice from the user.
 
 ## Save every LeetCode attempt
 
+Record the starting date and time for every problem attempt in its Session summary,
+using the America/Toronto timezone and including the timezone abbreviation.
+Capture this timestamp when the attempt begins. If tracking is requested after
+an attempt has already begun and its exact start is unavailable, record when
+tracking began and say that the earlier start time was not captured. Preserve
+separate starting timestamps for subsequent attempts at the same problem.
+This timestamp is an exception to the restriction on administrative metadata;
+keep the three assessment bullets at the top unchanged. Do not report elapsed
+time or add a time breakdown unless the user requests it.
+
 For every new LeetCode problem tackled in this project, create a Markdown file
 in `leetcode/` when the attempt starts. Use `<number>-<kebab-case-title>.md`
 (for example, `0054-spiral-matrix.md`). If the number is unknown, use the title.
