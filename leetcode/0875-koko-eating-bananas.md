@@ -1,12 +1,185 @@
-- Confidence: 1/5
-- Result: not finished
-- Workon: Justify the search decisions, especially when a candidate uses exactly the allowed hours.
+- Confidence: 3/5
+- Result: can get with hint
+- Workon: Explain why each boundary update preserves the minimum feasible speed and why the loop includes the final candidate.
 
 # 875. Koko Eating Bananas
 
 ## Users Own notes
 
+```python
+# atleast one pile
+# atleast as many hours as piles
+# piles are NOT sorted
+# you can modify the input
+# [3, 6, 7, 11] h = 8
+#           |
+# l = 3
+# r = 5
+# rate = 4
+# time = 1 + 2 + 2 + 3
+```
+
 ## Code
+
+```python
+class Solution:
+    def minEatingSpeed(self, piles: list[int], h: int) -> int:
+        # atleast one pile
+        # atleast as many hours as piles
+        # piles are NOT sorted
+        # you can modify the input
+
+        # [3, 6, 7, 11] h = 8
+        max_n = 0
+        for num in piles:
+            max_n = max(max_n, num)
+
+        l = 1
+        r = max_n
+
+        while l < r:
+            eating_rate = l + (r-l)
+            time = 0
+
+            for pile in piles:
+                time += ceil(pile/eating_rate)
+
+                if time > h:
+                    l += eating_rate + 1
+                elif time <= h:
+                    r -= eating_rate - 1
+
+        return eating_rate
+```
+
+Latest submitted version:
+
+```python
+lass Solution:
+    def minEatingSpeed(self, piles: list[int], h: int) -> int:
+        # atleast one pile 
+        # atleast as many hours as piles
+        # piles are NOT sorted
+        # you can modify the input
+
+        # [3, 6, 7, 11] h = 8
+        #           | 
+        # l = 3
+        # r = 5
+        # rate = 4
+        # time = 1 + 2 + 2 + 3
+
+        max_n = 0
+        for num in piles:
+            max_n = max(max_n, num)
+
+        l = 1
+        r = max_n
+        res = max_n
+
+        while l < r:
+            eating_rate = l + ( (r-l) // 2 )
+            time = 0
+
+            for pile in piles:
+                if time > h:
+                    break
+                time += ceil(pile/eating_rate)
+
+            if time > h:
+                l += eating_rate + 1
+            elif time <= h:
+                res = min(eating_rate, res)
+                r -= eating_rate - 1
+
+        return eating_rate
+```
+
+Revised boundary assignments:
+
+```python
+class Solution:
+    def minEatingSpeed(self, piles: list[int], h: int) -> int:
+        # atleast one pile 
+        # atleast as many hours as piles
+        # piles are NOT sorted
+        # you can modify the input
+
+        # [3, 6, 7, 11] h = 8
+        #           | 
+        # l = 3
+        # r = 5
+        # rate = 4
+        # time = 1 + 2 + 2 + 3
+
+        max_n = 0
+        for num in piles:
+            max_n = max(max_n, num)
+
+        l = 1
+        r = max_n
+        res = max_n
+
+        while l < r:
+            eating_rate = l + ( (r-l) // 2 )
+            time = 0
+
+            for pile in piles:
+                if time > h:
+                    break
+                time += ceil(pile/eating_rate)
+
+            if time > h:
+                l = eating_rate + 1
+            elif time <= h:
+                res = min(eating_rate, res)
+                r = eating_rate - 1
+
+        return res
+```
+
+Final revision after the boundary hint:
+
+```python
+class Solution:
+    def minEatingSpeed(self, piles: list[int], h: int) -> int:
+        # atleast one pile 
+        # atleast as many hours as piles
+        # piles are NOT sorted
+        # you can modify the input
+
+        # [3, 6, 7, 11] h = 8
+        #           | 
+        # l = 3
+        # r = 5
+        # rate = 4
+        # time = 1 + 2 + 2 + 3
+
+        max_n = 0
+        for num in piles:
+            max_n = max(max_n, num)
+
+        l = 1
+        r = max_n
+        res = max_n
+
+        while l <= r:
+            eating_rate = l + ( (r-l) // 2 )
+            time = 0
+
+            for pile in piles:
+                if time > h:
+                    break
+                time += ceil(pile/eating_rate)
+
+            if time > h:
+                l = eating_rate + 1
+            elif time <= h:
+                res = min(eating_rate, res)
+                r = eating_rate - 1
+
+        return res
+```
 
 ## Session summary
 
@@ -26,4 +199,47 @@
 - The coach confirmed the candidate-check reasoning and invited implementation. You asked whether that meant writing code now.
 - You planned to find the maximum pile, then create a list of speeds from one through that maximum using an exclusive range endpoint. The coach questioned the need to store every candidate because that list's memory grows with the largest pile.
 
+- You reported implementation difficulties with ceiling syntax, loop progress, equality, and which value to return. The coach later read your code through the connected Chrome tab.
+- At your request, the coach added a comment asking whether the speed expression chooses the middle when the bounds are one and eleven. You answered eleven and said you updated it.
+- You submitted a revised midpoint calculation, moved boundary updates after the pile scan, added an early stop when hours exceed the allowance, and tracked a feasible result. Your notes show a speed-four dry run totaling eight hours. You asked what was wrong with the code; the boundary updates and returned value still need correction.
+
+- You corrected both boundary updates to assignments and changed the return to the saved feasible result. The loop still stops when the bounds meet, leaving that candidate unchecked with your current updates.
+
+- After the coach showed a remaining unchecked candidate for piles = [5] and h = 3, you corrected the loop condition to l <= r.
+
+- You gave a final explanation covering the bounds, searching speeds without storing an array, recording feasible speeds, and exploring smaller speeds. You initially said every speed is checked, then contrasted that with binary search. Your verbal right-bound updates alternated between midpoint plus one and midpoint, unlike your corrected code. You stated logarithmic time times a linear factor without defining the symbols, and constant auxiliary space. The coach asked you to justify discarding a whole range before concluding the evaluation.
+- You explained that lowering an already-infeasible speed increases the hours and cannot produce a valid solution. The coach refined this to hours staying the same or increasing because of rounding. You did not report a final submission result.
+
 ## Feedback
+
+**Advance this person to the next round?**
+No. For an internship mock interview, your independent approach was promising, but the implementation required several targeted corrections before it became correct. This assesses the observed session, not a company's hiring decision.
+
+**Technical: 2 out of 4.**
+You completed a correct working algorithm after correcting the midpoint, boundary assignments, returned value, and inclusive loop condition. The code uses ceil, which must be available in the execution environment. You described constant auxiliary space correctly; your time-complexity symbols remained undefined after earlier clarification. Your notes include a dry run, but you did not report a final submission result.
+
+**Problem solving: 3 out of 4.**
+You independently identified the repeated-rate bottleneck, proposed binary search, justified the maximum-pile bound, and derived rounded-up hours per pile. You explained why slower speeds cannot rescue an infeasible speed after follow-up questions. You needed help translating the reasoning into a search that preserves every remaining candidate.
+
+**Communication: 2 out of 4.**
+Your clarification questions and seven-bananas-at-speed-three example were clear. Your final explanation mixed exhaustive checking with binary search, left complexity symbols undefined, and described right-bound updates inconsistently with your code. Productive pauses were not a weakness; imprecise claims were.
+
+**Things you did well:**
+
+- You checked guarantees before designing behavior for impossible inputs.
+- You derived the search approach from repeated work rather than receiving the algorithm from the coach.
+- You explained ceiling division with a concrete example and revised your code in response to focused hints.
+
+**Areas of improvement:**
+
+- Your implementation did not initially preserve the remaining search interval: arithmetic updates skipped candidates, and the strict loop condition left one unchecked.
+- Your final explanation did not consistently match your corrected code. Precise boundaries and clearly defined complexity quantities would make the reasoning easier to assess.
+- Your verification evidence was narrow. Include a single remaining candidate and the smallest valid input in your own checks.
+
+**My advice:**
+
+- Highest priority: before coding, state what the bounds contain and explain each assignment in terms of candidates eliminated.
+- Reimplement this search from a blank editor and dry-run a one-element interval and an exact-hours case without hints.
+- Give a concise explanation with n defined as the pile count and M as the largest pile: O(n log M) time and O(1) auxiliary space.
+
+
