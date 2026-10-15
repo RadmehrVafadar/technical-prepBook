@@ -40,4 +40,4 @@ def pyramid(n):
 
 
 if __name__ == "__main__":
-    pyramid(20)
+    pyramid(10)
