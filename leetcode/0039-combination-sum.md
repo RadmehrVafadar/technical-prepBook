@@ -6,6 +6,8 @@
 
 ## Users Own notes
 
+# Need to remember how we create unqique combinations (dp with one branch moving the window of candidate and one branch not) and going untill reach the base cases where either the window is larger then the candidates list of total sum is higher or equal.
+
 ## Code
 
 User-submitted solution, sourced from a YouTube video (assisted).
