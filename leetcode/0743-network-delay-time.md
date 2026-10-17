@@ -1,12 +1,51 @@
-- Confidence: 1/5
-- Result: not finished
-- Workon: Develop a correct baseline approach for finding when each node receives the signal.
+- Confidence: 4/5
+- Result: clean
+- Workon: Explain why a node's shortest distance is final when it is first removed from the min-heap.
 
 # 743. Network Delay Time
 
 ## Users Own notes
 
 ## Code
+
+```python
+class Solution:
+    def networkDelayTime(self, times: list[list[int]], n: int, k: int) -> int:
+        """
+        Run dijstras algorithm and find the larget number
+
+        REAsoning:
+            The node that it takes the longest to reach is the final node and dijkstras finds the least ammount of time it takes so the maxium value in our results will be the minimum ammount of time it would take
+        """
+        res = 0
+        visited = {}
+        adj = {node:[] for node in range(1, n+1)}
+
+        # adj = 1: (distance, weight)
+        for s, d, weight in times:
+            adj[s].append((d, weight))
+        
+        minheap = [(0, k)]
+
+        while minheap:
+            w1, n1 = heapq.heappop(minheap)
+            if n1 in visited:
+                continue
+            
+            visited[n1] = w1
+
+            for n2, w2 in adj[n1]:
+                if n2 not in visited:
+                    heapq.heappush(minheap, (w2+w1, n2))
+        
+
+        for i in range(1, n+1):
+            if i in visited:
+                res = max(res, visited[i])
+            else:
+                return -1
+        return res
+```
 
 ## Session summary
 
@@ -17,5 +56,16 @@
 - You asked whether the signal spreads simultaneously. After clarification that nodes 1 and 3 receive it at time 1 from node 2, you correctly stated that node 4 receives it at time 2.
 - For the same edges starting from node 1, you correctly answered `-1` because not all nodes can be reached regardless of how long we wait.
 - You asked about node labels beyond `n`, cycles, a starting node with no outgoing edges, edge direction, and whether `n` or the number of edges could be zero; the coach clarified these input guarantees.
+
+- On October 15, 2026 at 15:15:41 EDT (America/Toronto), tracking resumed with your submitted solution; the start time of this coding work was not captured.
+- You supplied a Python implementation using an adjacency list, a min-heap of cumulative travel times, and a dictionary of finalized distances. You returned the maximum recorded distance, or `-1` if any node was unreachable.
+- Your docstring explained that the longest of the minimum arrival times determines when every node receives the signal. No algorithmic hints were given for this submitted implementation in this exchange.
+
+- You explained that the min-heap selects the shortest queued route and that `visited` skips later entries for an already finalized node. You also suggested tracking known distances before pushing entries to reduce heap clutter. Your explanation has not yet justified why a route discovered later cannot improve a finalized distance.
+
+- When asked which edge-weight property prevents a later route from improving a finalized distance, you answered that the weights are positive. The coach clarified that nonnegative weights, including zero, are sufficient.
+
+- You gave time complexity as `O((V+E) log V)`, attributing heap operations to each node and traversal to nodes and edges. The coach clarified that this implementation can queue multiple entries per node, so heap size and operation count can depend on `E`; you asked why the logarithm uses `E` and why the bound included `+1`.
+- You correctly gave auxiliary space as `O(V+E)`, citing the adjacency structure and visited storage. You referred to `res` and `visited` as lists; the coach clarified that `res` is a scalar, `visited` is a dictionary, and the heap also contributes space.
 
 ## Feedback
