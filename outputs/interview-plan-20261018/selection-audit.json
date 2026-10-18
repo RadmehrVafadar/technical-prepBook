@@ -1,0 +1,378 @@
+[
+  {
+    "date": "2026-10-19",
+    "id": 200,
+    "title": "Number of Islands",
+    "type": "Re-do",
+    "frequency": 50.2,
+    "historicallySolved": true
+  },
+  {
+    "date": "2026-10-19",
+    "id": 560,
+    "title": "Subarray Sum Equals K",
+    "type": "Re-do",
+    "frequency": 50.2,
+    "historicallySolved": true
+  },
+  {
+    "date": "2026-10-20",
+    "id": 236,
+    "title": "Lowest Common Ancestor of a Binary Tree",
+    "type": "Re-do",
+    "frequency": 36.7,
+    "historicallySolved": true
+  },
+  {
+    "date": "2026-10-20",
+    "id": 322,
+    "title": "Coin Change",
+    "type": "Re-do",
+    "frequency": 37.5,
+    "historicallySolved": true
+  },
+  {
+    "date": "2026-10-21",
+    "id": 207,
+    "title": "Course Schedule",
+    "type": "Re-do",
+    "frequency": 37.5,
+    "historicallySolved": true
+  },
+  {
+    "date": "2026-10-21",
+    "id": 875,
+    "title": "Koko Eating Bananas",
+    "type": "Re-do",
+    "frequency": 50,
+    "historicallySolved": true
+  },
+  {
+    "date": "2026-10-22",
+    "id": 394,
+    "title": "Decode String",
+    "type": "Re-do",
+    "frequency": 37.5,
+    "historicallySolved": true
+  },
+  {
+    "date": "2026-10-24",
+    "id": 128,
+    "title": "Longest Consecutive Sequence",
+    "type": "Re-do",
+    "frequency": 62.5,
+    "historicallySolved": true
+  },
+  {
+    "date": "2026-10-24",
+    "id": 15,
+    "title": "3Sum",
+    "type": "Re-do",
+    "frequency": 66.8,
+    "historicallySolved": true
+  },
+  {
+    "date": "2026-10-25",
+    "id": 11,
+    "title": "Container With Most Water",
+    "type": "Re-do",
+    "frequency": 62.5,
+    "historicallySolved": true
+  },
+  {
+    "date": "2026-10-25",
+    "id": 904,
+    "title": "Fruit Into Baskets",
+    "type": "New",
+    "frequency": 50,
+    "historicallySolved": false
+  },
+  {
+    "date": "2026-10-26",
+    "id": 39,
+    "title": "Combination Sum",
+    "type": "Re-do",
+    "frequency": 37.5,
+    "historicallySolved": true
+  },
+  {
+    "date": "2026-10-26",
+    "id": 22,
+    "title": "Generate Parentheses",
+    "type": "Re-do",
+    "frequency": 46.6,
+    "historicallySolved": true
+  },
+  {
+    "date": "2026-10-27",
+    "id": 206,
+    "title": "Reverse Linked List",
+    "type": "Re-do",
+    "frequency": 50.2,
+    "historicallySolved": true
+  },
+  {
+    "date": "2026-10-27",
+    "id": 2,
+    "title": "Add Two Numbers",
+    "type": "Re-do",
+    "frequency": 75,
+    "historicallySolved": true
+  },
+  {
+    "date": "2026-10-28",
+    "id": 146,
+    "title": "LRU Cache",
+    "type": "Re-do",
+    "frequency": 50,
+    "historicallySolved": true
+  },
+  {
+    "date": "2026-10-29",
+    "id": 54,
+    "title": "Spiral Matrix",
+    "type": "Re-do",
+    "frequency": 50,
+    "historicallySolved": true
+  },
+  {
+    "date": "2026-10-29",
+    "id": 5,
+    "title": "Longest Palindromic Substring",
+    "type": "Re-do",
+    "frequency": 50,
+    "historicallySolved": true
+  },
+  {
+    "date": "2026-10-30",
+    "id": 56,
+    "title": "Merge Intervals",
+    "type": "Re-do",
+    "frequency": 36.7,
+    "historicallySolved": true
+  },
+  {
+    "date": "2026-10-30",
+    "id": 57,
+    "title": "Insert Interval",
+    "type": "New",
+    "frequency": 29,
+    "historicallySolved": false
+  },
+  {
+    "date": "2026-10-31",
+    "id": 994,
+    "title": "Rotting Oranges",
+    "type": "Re-do",
+    "frequency": 42.3,
+    "historicallySolved": true
+  },
+  {
+    "date": "2026-10-31",
+    "id": 417,
+    "title": "Pacific Atlantic Water Flow",
+    "type": "Re-do",
+    "frequency": 37.5,
+    "historicallySolved": true
+  },
+  {
+    "date": "2026-11-01",
+    "id": 34,
+    "title": "Find First and Last Position of Element in Sorted Array",
+    "type": "New",
+    "frequency": 36.7,
+    "historicallySolved": false
+  },
+  {
+    "date": "2026-11-01",
+    "id": 981,
+    "title": "Time Based Key-Value Store",
+    "type": "New",
+    "frequency": 29,
+    "historicallySolved": false
+  },
+  {
+    "date": "2026-11-02",
+    "id": 215,
+    "title": "Kth Largest Element in an Array",
+    "type": "Re-do",
+    "frequency": 50,
+    "historicallySolved": true
+  },
+  {
+    "date": "2026-11-02",
+    "id": 49,
+    "title": "Group Anagrams",
+    "type": "Re-do",
+    "frequency": 50.2,
+    "historicallySolved": true
+  },
+  {
+    "date": "2026-11-03",
+    "id": 55,
+    "title": "Jump Game",
+    "type": "New",
+    "frequency": 37.5,
+    "historicallySolved": false
+  },
+  {
+    "date": "2026-11-03",
+    "id": 300,
+    "title": "Longest Increasing Subsequence",
+    "type": "New",
+    "frequency": 37.5,
+    "historicallySolved": false
+  },
+  {
+    "date": "2026-11-04",
+    "id": 416,
+    "title": "Partition Equal Subset Sum",
+    "type": "New",
+    "frequency": 29,
+    "historicallySolved": false
+  },
+  {
+    "date": "2026-11-05",
+    "id": 1631,
+    "title": "Path With Minimum Effort",
+    "type": "New",
+    "frequency": 37.5,
+    "historicallySolved": false
+  },
+  {
+    "date": "2026-11-06",
+    "id": 518,
+    "title": "Coin Change II",
+    "type": "New",
+    "frequency": 37.5,
+    "historicallySolved": false
+  },
+  {
+    "date": "2026-11-06",
+    "id": 543,
+    "title": "Diameter of Binary Tree",
+    "type": "New",
+    "frequency": 36.7,
+    "historicallySolved": false
+  },
+  {
+    "date": "2026-11-07",
+    "id": 208,
+    "title": "Implement Trie (Prefix Tree)",
+    "type": "New",
+    "frequency": 29,
+    "historicallySolved": false
+  },
+  {
+    "date": "2026-11-07",
+    "id": 435,
+    "title": "Non-overlapping Intervals",
+    "type": "New",
+    "frequency": 29,
+    "historicallySolved": false
+  },
+  {
+    "date": "2026-11-08",
+    "id": 410,
+    "title": "Split Array Largest Sum",
+    "type": "New",
+    "frequency": 53.2,
+    "historicallySolved": false
+  },
+  {
+    "date": "2026-11-09",
+    "id": 42,
+    "title": "Trapping Rain Water",
+    "type": "Re-do",
+    "frequency": 75,
+    "historicallySolved": true
+  },
+  {
+    "date": "2026-11-10",
+    "id": 239,
+    "title": "Sliding Window Maximum",
+    "type": "New",
+    "frequency": 50.2,
+    "historicallySolved": false
+  },
+  {
+    "date": "2026-11-11",
+    "id": 310,
+    "title": "Minimum Height Trees",
+    "type": "New",
+    "frequency": 29,
+    "historicallySolved": false
+  },
+  {
+    "date": "2026-11-11",
+    "id": 2096,
+    "title": "Step-By-Step Directions From a Binary Tree Node to Another",
+    "type": "New",
+    "frequency": 29,
+    "historicallySolved": false
+  },
+  {
+    "date": "2026-11-12",
+    "id": 322,
+    "title": "Coin Change",
+    "type": "Re-do",
+    "frequency": 37.5,
+    "historicallySolved": true
+  },
+  {
+    "date": "2026-11-12",
+    "id": 560,
+    "title": "Subarray Sum Equals K",
+    "type": "Re-do",
+    "frequency": 50.2,
+    "historicallySolved": true
+  },
+  {
+    "date": "2026-11-13",
+    "id": 875,
+    "title": "Koko Eating Bananas",
+    "type": "Re-do",
+    "frequency": 50,
+    "historicallySolved": true
+  },
+  {
+    "date": "2026-11-13",
+    "id": 394,
+    "title": "Decode String",
+    "type": "Re-do",
+    "frequency": 37.5,
+    "historicallySolved": true
+  },
+  {
+    "date": "2026-11-14",
+    "id": 15,
+    "title": "3Sum",
+    "type": "Rehearsal",
+    "frequency": 66.8,
+    "historicallySolved": true
+  },
+  {
+    "date": "2026-11-14",
+    "id": 200,
+    "title": "Number of Islands",
+    "type": "Rehearsal",
+    "frequency": 50.2,
+    "historicallySolved": true
+  },
+  {
+    "date": "2026-11-15",
+    "id": 146,
+    "title": "LRU Cache",
+    "type": "Re-do",
+    "frequency": 50,
+    "historicallySolved": true
+  },
+  {
+    "date": "2026-11-16",
+    "id": 3,
+    "title": "Longest Substring Without Repeating Characters",
+    "type": "Warm-up",
+    "frequency": 75,
+    "historicallySolved": true
+  }
+]
