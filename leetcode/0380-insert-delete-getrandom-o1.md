@@ -6,6 +6,7 @@
 
 ## Users Own notes
 
+- Remember that a combiantion of datastructures could also be used eg (hashmap and lists) also remember the flip and pop trick for maintinging O(1)
 - Reported struggling with the questions and looking at the topic tags (hashmap and arrays), which helped; reported not viewing the algorithm.
 
 ## Code
