@@ -30,12 +30,20 @@ This timestamp is an exception to the restriction on administrative metadata;
 keep the three assessment bullets at the top unchanged. Do not report elapsed
 time or add a time breakdown unless the user requests it.
 
-For every new LeetCode problem tackled in this project, create a Markdown file
-in `leetcode/` when the attempt starts. Use `<number>-<kebab-case-title>.md`
-(for example, `0054-spiral-matrix.md`). If the number is unknown, use the title.
-Reuse and update the existing file for the same problem; retain earlier attempts
-when they are useful instead of overwriting their history. Convert an existing
-plain-text attempt to Markdown when continuing it.
+For every LeetCode attempt tackled in this project, create a separate Markdown
+file in `leetcode/questions/<number>-<kebab-case-title>/` when the attempt starts.
+Keep all attempts for the same problem together in that folder. Use
+`<number>-<kebab-case-title>-v<N>.md` (for example,
+`leetcode/questions/0054-spiral-matrix/0054-spiral-matrix-v1.md`, then
+`0054-spiral-matrix-v2.md` in the same folder). If the number is unknown, use
+the title for both the folder and filename. Each new retry gets the next available version number;
+continuing the same attempt updates its existing file. Each attempt has its own
+assessment bullets, code, notes, Session summary, and Feedback.
+
+Preserve earlier attempt files. Treat an existing unversioned problem file as
+version 1 and use `-v2.md` for its next retry, incrementing beyond any versions
+already present. Do not rename or split historical files unless the user asks.
+Convert an existing plain-text attempt to Markdown when continuing it.
 
 At the very top of each problem file, include only these three compact bullets:
 
