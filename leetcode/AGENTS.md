@@ -31,14 +31,23 @@ keep the three assessment bullets at the top unchanged. Do not report elapsed
 time or add a time breakdown unless the user requests it.
 
 For every LeetCode attempt tackled in this project, create a separate Markdown
-file in `leetcode/questions/<number>-<kebab-case-title>/` when the attempt starts.
+file in `leetcode/questions/<category>/<number>-<kebab-case-title>/` when the attempt starts.
 Keep all attempts for the same problem together in that folder. Use
 `<number>-<kebab-case-title>-v<N>.md` (for example,
-`leetcode/questions/0054-spiral-matrix/0054-spiral-matrix-v1.md`, then
+`leetcode/questions/matrix-traversal/0054-spiral-matrix/0054-spiral-matrix-v1.md`, then
 `0054-spiral-matrix-v2.md` in the same folder). If the number is unknown, use
 the title for both the folder and filename. Each new retry gets the next available version number;
 continuing the same attempt updates its existing file. Each attempt has its own
 assessment bullets, code, notes, Session summary, and Feedback.
+
+Group problem folders by their primary solving technique, using kebab-case
+category names such as `two-pointers`, `sliding-window`, or `dynamic-programming`.
+Search existing categories and problem folders before creating a new one.
+Keep each problem in one category, with all its attempts together, even if it
+has multiple applicable techniques. Use the existing category for retries.
+For new problems whose technique is not yet established, use `uncategorized`
+and move the problem folder once the approach is established. Do not reveal a
+technique to the user early just to choose a category; follow the coaching policy.
 
 Preserve earlier attempt files. Treat an existing unversioned problem file as
 version 1 and use `-v2.md` for its next retry, incrementing beyond any versions
