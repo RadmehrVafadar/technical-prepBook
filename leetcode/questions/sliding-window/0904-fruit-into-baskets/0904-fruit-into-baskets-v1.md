@@ -4,8 +4,6 @@
 
 # 904. Fruit Into Baskets
 
-## Users Own notes
-
 ## Code
 
 [Python working file](0904-fruit-into-baskets-v1.py)
