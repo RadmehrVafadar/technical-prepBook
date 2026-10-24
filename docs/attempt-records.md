@@ -1,6 +1,6 @@
 # Attempt records
 
-Each LeetCode attempt is a separate Markdown record of the user's work and assistance received.
+Each new LeetCode attempt has a Python working file and a separate Markdown record of observations, feedback, and assistance received.
 
 ## Why
 
@@ -9,6 +9,10 @@ Preserving retries and distinguishing independent work from assistance makes pro
 ## How it works
 
 - Create `leetcode/questions/<category>/<number>-<kebab-case-title>/<number>-<kebab-case-title>-v<N>.md` when an attempt starts.
+- For interviewer-selected problems, use a neutral folder and basename such as `leetcode/questions/uncategorized/interview-<timestamp>/interview-<timestamp>-v<N>` during the interview so paths do not reveal the problem or technique.
+- Create a `.py` working file beside the Markdown record with the same basename; put only the minimal prompt and input/output examples in opening comments and leave implementation to the user.
+- Keep the Markdown record's identifying title out of the opening prompt; show the user the Python file for their work.
+- After the interview, file both records under the problem's normal category, title, and next available version; preserve the user's Python content unchanged.
 - Search existing folders first; reuse the problem's category and increment the highest version for retries.
 - Continue the same attempt in its existing file; preserve previous attempts and useful earlier submitted code.
 - Use the title alone if the number is unknown; use `uncategorized` until the technique is established, then move the whole problem folder without revealing the technique early.
@@ -26,9 +30,12 @@ Start every record with exactly these assessment bullets, followed by `# <number
 Use these sections in order, leaving them empty until content exists:
 
 1. `Users Own notes` - only the user's comments or explicitly requested notes; preserve wording.
-2. `Code` - user-submitted code in fenced blocks; save assistant code only on explicit request and label it assisted.
+2. `Code` - a relative link to the attempt's `.py` file, without duplicating code in Markdown; preserve inline code in historical records and save assistant code only on explicit request, labeled assisted.
 3. `Session summary` - concise chronological account of user reasoning, actions, hints, and corrections; distinguish assistance from independent insight.
 4. `Feedback` - the interview evaluation when conducted; keep chronology in the summary rather than duplicating it here.
+
+In `Session summary`, distinguish user-selected dry runs from interviewer-supplied cases and record what each corrective prompt or hint revealed.
+Include observed clarifications and omissions in `Feedback`, especially input bounds, approach tradeoffs, boundary reasoning, and implementation evidence.
 
 ## Key files
 
