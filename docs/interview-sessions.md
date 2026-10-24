@@ -8,6 +8,31 @@ Minimal intervention makes independent reasoning, implementation, and communicat
 
 ## How it works
 
+### Interview startup
+
+"Let's start an interview", "start a mock", and equivalent requests trigger this sequence in both text and voice sessions.
+Complete preparation before returning control to the user; reading the instructions alone does not complete startup.
+
+1. Read applicable `AGENTS.md` instructions, this guide, and [Attempt records](attempt-records.md) before selecting or presenting a problem.
+   Use internship-level Python interview mode unless the user explicitly overrides it; do not ask generic role, language, mode, readiness, or time-budget questions.
+2. Check whether this chat already has an active attempt and read its latest saved files.
+   Continue that attempt in place unless the user explicitly requests a new one; do not create a duplicate or overwrite user code.
+3. For a new attempt, read the current question tracker and relevant latest attempt records under `leetcode/questions/` before selecting a suitable question.
+   The current tracker is `C:/Users/radme/Downloads/coding_readiness_roadmap.xlsm`, sheet `Coding Readiness Roadmap`, even when the user calls it a CSV.
+   Apply the selection rules under [Key files](#key-files), including completed attempts and planned retries, and leave the tracker unchanged.
+4. Verify the selected problem's full statement, examples, input bounds, required interface, and edge-case behavior privately from an authoritative source before presenting it.
+   Keep its identity, source, technique, and undisclosed constraints out of the opening prompt and user-facing path.
+5. Create the neutral-path `.py` working file and matching required Markdown attempt record using [Attempt records](attempt-records.md).
+   Put only the minimal task description and input/output examples in Python comments; leave the implementation, signature, and any required class for the user.
+   Initialize the record's required assessment bullets, sections, relative Python link, and America/Toronto start timestamp without invented observations or feedback.
+6. Open/show the Python working file for the user and present only the minimal problem prompt.
+   Hand control back only after the files are prepared and shown; do not say "go ahead whenever ready" or ask a readiness question before preparation.
+
+If a required tracker, source, or file operation is unavailable, identify the specific blocker and ask only for the missing information or access needed to proceed.
+Do not replace preparation with generic setup questions or imply a problem is ready when it is not.
+
+### During the interview
+
 - Pick a problem from the question-tracking file supplied by the user.
 - Begin with only the minimum task description needed to interpret example inputs and expected outputs, placed in comments at the top of the attempt's `.py` file.
 - Leave the rest of the Python file blank for the user.
