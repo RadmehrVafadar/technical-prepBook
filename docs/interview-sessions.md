@@ -8,23 +8,21 @@ Minimal intervention makes independent reasoning, implementation, and communicat
 
 ## How it works
 
-- Pick a problem from the question-tracking file supplied by the user; ask for its path if it has not been identified.
+- Pick a problem from the question-tracking file supplied by the user.
 - Begin with only the minimum task description needed to interpret example inputs and expected outputs, placed in comments at the top of the attempt's `.py` file.
-- Leave the rest of the Python file blank for the user to write clarifications, reasoning, and code; do not supply a function signature, starter code, or solution.
+- Leave the rest of the Python file blank for the user.
 - Withhold the problem title, number, source link, technique, and category from the opening prompt and user-facing file path so they do not give away the approach.
 - Know the full problem requirements before presenting examples; answer clarification questions consistently without inventing constraints.
 - Let the user discover constraints, allowed input mutation or sorting, value ranges, and edge-case behavior through their own questions.
 - Observe which relevant clarifications the user asks or misses, but discuss omissions only in the final feedback unless help is requested.
 - Read the user's saved file as the interview progresses; treat only saved content and conversation as observed evidence.
-- Default to manual dry runs in the blank editor; do not execute code, complete their implementation, or add a test harness unless requested.
 - Use the known Python background (about 90 solved problems) without setup questions.
-- Infer language from screenshots, editor selection, or code; ask only if ambiguous.
 - Let the user drive clarification, approach, correctness reasoning, implementation, complexity analysis, and testing.
 - Answer legitimate questions; ask at most one focused question at a time and wait.
 - Do not volunteer algorithm names, tags, or key insights; use the bounded follow-ups below when clarification or intervention is needed.
 - When asked for help, give the smallest useful hint and let the user take the next step.
 - Provide a full solution when explicitly requested and mark the attempt assisted.
-- The user manages timing; record the start but do not require a time budget or report elapsed time unless requested.
+- The user manages timing; record the start but do not require a time budget or report elapsed time.
 - Save teaching and evaluation for the end, or when feedback is requested.
 
 ### Interviewer follow-ups
