@@ -10,8 +10,7 @@ Preserving retries and distinguishing independent work from assistance makes pro
 
 - Create `leetcode/questions/<category>/<number>-<kebab-case-title>/<number>-<kebab-case-title>-v<N>.md` when an attempt starts.
 - For interviewer-selected problems, use a neutral folder and basename such as `leetcode/questions/uncategorized/interview-<timestamp>/interview-<timestamp>-v<N>` during the interview so paths do not reveal the problem or technique.
-- Create a `.py` working file beside the Markdown record with the same basename; put only the minimal prompt and input/output examples in opening comments and leave implementation to the user.
-- Keep the Markdown record's identifying title out of the opening prompt; show the user the Python file for their work.
+- Create a `.py` working file beside the Markdown record with the same basename; follow [Interview startup](interview-sessions.md#interview-startup) for prompt contents and presentation.
 - After the interview, file both records under the problem's normal category, title, and next available version; preserve the user's Python content unchanged.
 - Search existing folders first; reuse the problem's category and increment the highest version for retries.
 - Continue the same attempt in its existing files; preserve previous attempts and useful earlier submitted code.
@@ -41,6 +40,17 @@ If no code was submitted, leave the Python file empty rather than inventing an i
 
 In `Session summary`, distinguish user-selected dry runs from interviewer-supplied cases and record what each corrective prompt or hint revealed.
 Include observed clarifications and omissions in `Feedback`, especially input bounds, approach tradeoffs, boundary reasoning, and implementation evidence.
+
+### Recording checkpoints
+
+- At startup, initialize the required bullets, title, sections, relative Python link, and start timestamp without invented observations or feedback.
+- During the interview, batch observations in context rather than rewriting the record after every exchange.
+  Save significant hints, interviewer-supplied corrections or counterexamples, and user corrections about assistance at the next natural pause.
+  Flush pending observations before a context handoff or session pause so attribution is preserved.
+- At evaluation or session end, read the current saved code as specified in [Interview sessions](interview-sessions.md#during-the-interview), then finalize the assessment bullets, chronology, and feedback once.
+  For a paused or unfinished attempt, save only observed progress and keep its status accurate.
+- Keep each event in the chronology once; feedback references its impact without repeating the walkthrough.
+  Reopen or revise finalized records only for new evidence, corrections, or an explicit request.
 
 ## Key files
 

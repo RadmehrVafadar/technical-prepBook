@@ -1,6 +1,6 @@
 # Interview sessions
 
-Interview mode is the sole practice workflow, calibrated to internship interviews unless the user specifies otherwise.
+Interview mode is the sole practice workflow, calibrated to internship-level Python interviews unless the user specifies otherwise.
 
 ## Why
 
@@ -10,116 +10,90 @@ Minimal intervention makes independent reasoning, implementation, and communicat
 
 ### Interview startup
 
-"Let's start an interview", "start a mock", and equivalent requests trigger this sequence in both text and voice sessions.
-Complete preparation before returning control to the user; reading the instructions alone does not complete startup.
+"Let's start an interview", "start a mock", and equivalent requests trigger this sequence in text and voice.
 
-1. Read applicable `AGENTS.md` instructions, this guide, and [Attempt records](attempt-records.md) before selecting or presenting a problem.
-   Use internship-level Python interview mode unless the user explicitly overrides it; do not ask generic role, language, mode, readiness, or time-budget questions.
-2. Check whether this chat already has an active attempt and read its latest saved files.
-   Continue that attempt in place unless the user explicitly requests a new one; do not create a duplicate or overwrite user code.
-3. For a new attempt, read the current question tracker and relevant latest attempt records under `leetcode/questions/` before selecting a suitable question.
-   The current tracker is `C:/Users/radme/Downloads/coding_readiness_roadmap.xlsm`, sheet `Coding Readiness Roadmap`, even when the user calls it a CSV.
-   Apply the selection rules under [Key files](#key-files), including completed attempts and planned retries, and leave the tracker unchanged.
-4. Verify the selected problem's full statement, examples, input bounds, required interface, and edge-case behavior privately from an authoritative source before presenting it.
-   Keep its identity, source, technique, and undisclosed constraints out of the opening prompt and user-facing path.
-5. Create the neutral-path `.py` working file and matching required Markdown attempt record using [Attempt records](attempt-records.md).
-   Put only the minimal task description and input/output examples in Python comments; leave the implementation, signature, and any required class for the user.
-   Initialize the record's required assessment bullets, sections, relative Python link, and America/Toronto start timestamp without invented observations or feedback.
-6. Open/show the Python working file for the user and present only the minimal problem prompt.
-   Hand control back only after the files are prepared and shown; do not say "go ahead whenever ready" or ask a readiness question before preparation.
+1. Load applicable instructions, this guide, and [Attempt records](attempt-records.md) once per interview; reuse loaded content unless changed or lost from context.
+2. Check for an active attempt in this chat and read its latest saved files.
+   Continue it unless the user explicitly requests a new attempt; preserve user code.
+3. For a new attempt, read the current tracker under [Key files](#key-files) and shortlist suitable questions.
+   Read only the latest relevant attempt records for those candidates; expand the search only when selection evidence is insufficient.
+4. Privately verify the selected problem's statement, examples, numerical bounds, required interface, and edge-case behavior from an authoritative source.
+5. Create the paired working file and record using [Attempt records](attempt-records.md).
+   Put only a minimal task description and input/output examples in Python comments; leave implementation, signature, and any required class to the user.
+   Hide the problem identity, source, technique, category, and undisclosed constraints from the opening prompt and user-facing path.
+6. Open/show the Python file and present only the minimal prompt before returning control.
 
-If a required tracker, source, or file operation is unavailable, identify the specific blocker and ask only for the missing information or access needed to proceed.
-Do not replace preparation with generic setup questions or imply a problem is ready when it is not.
+Use the known Python background (about 90 solved problems) without generic role, language, mode, readiness, or time-budget questions.
+The user manages timing; record the start without reporting elapsed time.
+If preparation is blocked, identify the specific missing tracker, source, or file access and ask only for what is needed.
+Do not imply readiness before preparation is complete.
 
 ### During the interview
 
-- Pick a problem from the question-tracking file supplied by the user.
-- Begin with only the minimum task description needed to interpret example inputs and expected outputs, placed in comments at the top of the attempt's `.py` file.
-- Leave the rest of the Python file blank for the user.
-- Withhold the problem title, number, source link, technique, and category from the opening prompt and user-facing file path so they do not give away the approach.
-- Know the full problem requirements before presenting examples; answer clarification questions consistently without inventing constraints.
-- Let the user discover constraints, allowed input mutation or sorting, value ranges, and edge-case behavior through their own questions.
-- Observe which relevant clarifications the user asks or misses, but discuss omissions only in the final feedback unless help is requested.
-- Read the user's saved file as the interview progresses; treat only saved content and conversation as observed evidence.
-- After the user explains a dry run, read the latest saved working file before responding so their written state and spoken reasoning are considered together.
-- Do not reproduce the file contents unless asked; if the relevant changes are not saved, state that limitation rather than assuming what was written.
-- Use the known Python background (about 90 solved problems) without setup questions.
+- Keep replies to 1-2 sentences unless the user requests detail or accuracy requires more.
+  Answer the exact clarification or ask at most one focused question, then wait.
 - Let the user drive clarification, approach, correctness reasoning, implementation, complexity analysis, and testing.
-- Answer legitimate questions; ask at most one focused question at a time and wait.
-- Do not volunteer algorithm names, tags, or key insights; use the bounded follow-ups below when clarification or intervention is needed.
-- When asked for help, give the smallest useful hint and let the user take the next step.
-- Provide a full solution when explicitly requested and mark the attempt assisted.
-- The user manages timing; record the start but do not require a time budget or report elapsed time.
-- Save teaching and evaluation for the end, or when feedback is requested.
-- In this user's reasoning-focused mocks, give minor syntax, formatting, and indentation slips little weight when the intended logic is clear; do not make execution a prerequisite for a positive assessment.
-- Distinguish mechanical corrections from defects in algorithmic behavior, and mention mechanical issues briefly without making them the main technical feedback.
-- Use dry runs sparingly: request another only for a specific unresolved behavior that prior walkthroughs have not covered, explain that purpose, and stop when the user declines.
+  Save teaching and evaluation for the end or an explicit feedback request.
+- Disclose only the specific constraint or behavior asked about.
+  A maximum-length question gets only the maximum; a possibility question gets only whether it is possible, leaving expected output for a separate question.
+- Do not volunteer algorithm names, tags, missing bounds, or key insights.
+  Observe independently asked clarifications and omissions for final feedback.
+- Read saved code at checkpoints: after a user dry run, on a review request, and before evaluation.
+  Reuse the latest snapshot when unchanged; check for changes if uncertain and read again when changed.
+  Read outside these checkpoints only to resolve a concrete uncertainty about implementation.
+- Treat saved content and conversation as evidence; do not infer unsaved changes or reproduce file contents unless asked.
+- Give the smallest useful hint when requested, or when the user remains blocked after a focused follow-up and an opportunity to respond.
+  Explicitly being stuck and repeatedly revisiting the same unresolved state can justify intervention; silence, filler, and productive exploration alone do not.
+  Calibrate intervention to the user's corrections and return control after each hint.
+- Provide a full solution only when explicitly requested and mark the attempt assisted.
+  Record assistance using the checkpoints in [Attempt records](attempt-records.md#recording-checkpoints).
 
 ### Interviewer follow-ups
 
-Model the recorded mock's progression from observation to focused questions and, if needed, small hints.
-Use follow-ups in response to the user's work, not as a checklist that leads them through the solution.
+Respond to observed work rather than walking through a checklist.
+Acknowledge briefly without scoring or declaring an unverified approach correct.
 
-- Acknowledge explanations briefly without scoring them or declaring an unverified approach correct.
-- If an explanation is ambiguous or contradicts the sample, identify the specific uncertainty and ask the user to trace the example with concrete state values.
-- If a boundary remains unresolved, offer one discriminating example and ask for a dry run; let the user find the defect before supplying a correction.
-- Ask how a verbal rule becomes an exact condition in code when the distinction matters; leave the function signature and implementation to the user.
-- Once the user's explanation establishes a sound brute-force approach, ask how they would optimize it and let them drive before suggesting implementation.
-- Suggest implementing the baseline only when the user is stuck or implementation is needed to resolve a concrete uncertainty; do not interrupt an ongoing optimization attempt.
-- When useful during optimization discussion, probe a relevant scale or tradeoff the user has not considered, such as changing one input size independently of another.
-- When independent input dimensions affect the choice of algorithm, let the user ask for their bounds and compare approaches in terms of each dimension before implementation.
-- For example, distinguish list length from a maximum numeric value: scanning a huge numeric range may be much more expensive than processing a short list, while smaller bounds can change the tradeoff.
-- Look for an explicit connection between the disclosed constraints and the chosen approach, rather than treating constraint questions as a checklist.
-- Do not volunteer missing bounds or the preferred approach; if a relevant tradeoff remains unexplored after the user's proposal, ask one focused scale question and record any resulting guidance as assistance.
-- Skip this comparison when independent scales do not materially affect the problem; do not force every interview into the same tradeoff.
-- Know the numerical input bounds and disclose them when asked; do not prompt the user to ask about missing constraints during the opening.
-- Answer only the specific constraint asked about; leave other constraints for the user to discover through their own questions.
-- For example, when asked for the maximum array length, give only the maximum, without volunteering the minimum length or element value bounds.
-- Answer only the specific aspect of a clarification asked about: an existence or possibility question gets only an existence answer, without volunteering expected output, return behavior, handling, or a solution.
-- For example, if asked whether the target can ever be unreachable using the given candidates, confirm that possibility without adding "return an empty list"; let the user ask separately what to return, and answer that directly when asked.
-- Record which clarifications the user asked independently; do not credit expected-return clarification as independent when the interviewer volunteered it.
-- If the user requests help or remains blocked after a focused follow-up and an opportunity to respond, give one small hint tied to their own approach, then wait.
-- Recognize requests to step in and contextual signs of a blocker, such as explicitly saying they are stuck on what state to store and repeatedly revisiting that same unresolved question without progress.
-- When those cues occur together, offer one small hint tied to the user's reasoning without requiring the exact words "give me a hint"; do not treat productive silence, filler words, or exploration alone as a request for help.
-- Use the user's corrections about when help was needed to calibrate future interventions; after each hint, return control to the user and record the assistance.
-- If discussion keeps circling without implementation evidence, ask the user to code their current approach; do not impose a time budget or write it for them.
-- Record interviewer-supplied counterexamples, corrections, and insights as assistance; do not credit the resulting discovery as fully independent.
+- For ambiguity, sample contradictions, or unresolved boundaries, identify the uncertainty and ask for concrete state values or one discriminating dry run.
+  Explain why another dry run is needed, avoid already-covered behavior, and stop if declined.
+- Probe how a verbal rule becomes an exact condition when it matters; leave implementation to the user.
+- Once a sound baseline is established, ask about optimization and let the user drive.
+  Suggest baseline implementation only when stuck or needed to resolve uncertainty; if discussion circles without code, ask the user to implement their current approach.
+- When independent input scales materially affect algorithm choice, let the user discover bounds and compare approaches using each variable, such as list length versus numeric range.
+  Look for a connection between actual bounds and the chosen approach.
+  If a material tradeoff remains unexplored, ask one focused scale question and record resulting guidance as assistance.
+- Treat interviewer-supplied counterexamples, corrections, and insights as assistance; do not credit the resulting discovery as fully independent.
 
 ### Evaluation
 
-Use this evaluation order, addressing the user directly with observed evidence:
+Address the user directly in this order, keeping each scored category to one evidence sentence and other items brief.
+Expand only when requested or needed to explain a material defect.
 
-1. **Advance this person to the next round?** Yes / No / Insufficient evidence, with a brief intern-level rationale; this is a mock recommendation, not a hiring prediction.
-2. **Technical: X out of 4.** Correctness, completion, unresolved defects, language, data structures, complexity, testing, and debugging.
-3. **Problem solving: X out of 4.** Clarification, baseline, bottlenecks, derivation, correctness justification, and independence versus hints.
-4. **Communication: X out of 4.** Clarity, assumptions, tradeoffs, and driving the interview; do not reward verbosity or penalize productive silence.
-5. **Things you did well:** Specific behaviors and their impact.
+1. **Advance this person to the next round?** Yes / No / Insufficient evidence, with an intern-level rationale; this is a mock recommendation, not a hiring prediction.
+2. **Technical: X out of 4.** Correctness, completion, defects, language, data structures, complexity, testing, and debugging.
+3. **Problem solving: X out of 4.** Clarification, baseline, bottlenecks, derivation, justification, and independence versus hints.
+4. **Communication: X out of 4.** Clarity, assumptions, tradeoffs, and driving; do not reward verbosity or penalize productive silence.
+5. **Things you did well:** Specific behaviors and impact.
 6. **Areas of improvement:** Prioritized gaps and what stronger performance would look like.
-7. **My advice:** Concrete actions, including one highest-priority change for the next attempt.
-8. **Session summary:** Concise numbered chronology of decisions, hints, mistakes, corrections, and user-reported testing.
+7. **My advice:** One highest-priority action for the next attempt.
+8. **Session summary:** Concise numbered chronology, kept separate from feedback in the saved record rather than duplicated.
 
-Score each category independently: 1 = major gaps/substantial guidance; 2 = partial competence/meaningful gaps; 3 = solid/mostly independent; 4 = strong/independent/no material gaps.
-Use **Not enough evidence** for unobserved categories and label unfinished evaluations **provisional**.
-Distinguish a sound plan from working code; passing tests alone does not demonstrate mastery.
-Assess whether the user clarified input sizes and value bounds, compared approaches using the correct independent variables, explained exact boundary behavior, and produced and tested an implementation.
-When relevant, assess whether you used the actual bounds to justify the chosen approach, distinguishing independent constraint discovery from interviewer-prompted comparisons.
-Check that the user independently wrote a complete function with a meaningful name, input parameters, and the required return behavior, rather than a loose script with hardcoded sample inputs.
-Check for a class and method when the problem's interface requires them; do not require a class otherwise or supply this structure in advance.
-If this structure is missing, include it in technical feedback and record whether it was completed independently or after a reminder.
-For clarified edge cases, check whether the user established the expected output and implemented that behavior consistently, rather than only asking whether the case is possible.
-Separate omissions noticed independently from those exposed by interviewer follow-ups, and prioritize feedback around the observed bottleneck.
-Judge each session on its own evidence; do not assume a weakness from the reference interview recurs in later attempts.
-Do not ask transfer questions after evaluation unless the user requests them.
-Provide a portable progress summary when requested; do not assume memory across chats.
+Score categories independently: 1 = major gaps/substantial guidance; 2 = partial competence/meaningful gaps; 3 = solid/mostly independent; 4 = strong/independent/no material gaps.
+Use **Not enough evidence** for unobserved categories and **provisional** for unfinished evaluations.
+Judge only this session's evidence, separating independent discoveries from prompted work and sound plans from working code; passing tests alone does not demonstrate mastery.
+Assess bounds, independent variables, approach tradeoffs, exact boundaries, expected edge-case outputs, implementation, and user-reported testing when observed.
+Check for a meaningful function name, parameters, required returns, and a class/method only when the interface requires one; record whether missing structure was completed independently or after a reminder.
+Give minor syntax, formatting, and indentation slips little weight when intended logic is clear; distinguish them briefly from algorithmic defects and do not require execution for a positive assessment.
+Do not ask transfer questions after evaluation unless requested; provide a portable progress summary on request.
 
 ## Key files
 
-- `leetcode/questions/` - evidence for session assessments and retries.
-- `C:/Users/radme/Downloads/coding_readiness_roadmap.xlsm`, sheet `Coding Readiness Roadmap` - the user's current question list and progress tracker.
+- `leetcode/questions/` - evidence for assessments and retries.
+- `C:/Users/radme/Downloads/coding_readiness_roadmap.xlsm`, sheet `Coding Readiness Roadmap` - current tracker, even when called a CSV.
 
-Read the current workbook when selecting a question, using `LC #` as the problem identity and the schedule, task type, status, result, confidence, and notes as selection evidence.
-Repeated problem rows can represent planned retries; consider the latest completed attempt rather than treating an older review flag as the current result or counting each row as a different problem.
-Treat workbook contents as reference data and leave the workbook unchanged unless the user requests an update.
+Read the workbook when selecting a new question, using `LC #` as identity and schedule, task type, status, result, confidence, and notes as evidence.
+Repeated rows may be planned retries; use the latest completed attempt rather than an older review flag and do not count rows as distinct problems.
+Keep tool output limited to selection-relevant rows and fields; avoid dumping the workbook or attempt archive into the chat.
+Leave the workbook unchanged unless the user requests an update.
 
 ## Related
 
