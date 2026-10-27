@@ -54,6 +54,7 @@ Include observed clarifications and omissions in `Feedback`, especially input bo
 
 ## Key files
 
+- [Attempt index](../leetcode/README.md) - problem folders grouped by technique; update when adding or moving a problem.
 - `leetcode/questions/` - versioned attempt records.
 
 ## Decisions and gotchas
