@@ -53,6 +53,10 @@ See [attempt conventions](../docs/attempt-records.md) for recording retries.
 - [56. Merge Intervals](questions/intervals/0056-merge-intervals/)
 - [57. Insert Interval](questions/intervals/0057-insert-interval/)
 
+## Linked List
+
+- [2. Add Two Numbers](questions/linked-list/0002-add-two-numbers/)
+
 ## Matrix Traversal
 
 - [54. Spiral Matrix](questions/matrix-traversal/0054-spiral-matrix/)
