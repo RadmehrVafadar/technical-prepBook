@@ -31,6 +31,7 @@ See [attempt conventions](../docs/attempt-records.md) for recording retries.
 
 - [146. LRU Cache](questions/data-structure-design/0146-lru-cache/)
 - [380. Insert Delete GetRandom O(1)](questions/data-structure-design/0380-insert-delete-getrandom-o1/)
+- [981. Time Based Key-Value Store](questions/data-structure-design/0981-time-based-key-value-store/)
 
 ## Dynamic Programming
 
@@ -90,8 +91,3 @@ See [attempt conventions](../docs/attempt-records.md) for recording retries.
 
 - [5. Longest Palindromic Substring](questions/two-pointers/0005-longest-palindromic-substring/)
 - [15. 3Sum](questions/two-pointers/0015-3sum/)
-
-## Uncategorized
-
-- [Interview in progress](questions/uncategorized/interview-20261031-190439/)
-
