@@ -45,6 +45,10 @@ See [attempt conventions](../docs/attempt-records.md) for recording retries.
 - [200. Number of Islands](questions/graph-traversal/0200-number-of-islands/)
 - [417. Pacific Atlantic Water Flow](questions/graph-traversal/0417-pacific-atlantic-water-flow/)
 
+## Hash Map
+
+- [49. Group Anagrams](questions/hash-map/0049-group-anagrams/)
+
 ## Hash Set
 
 - [128. Longest Consecutive Sequence](questions/hash-set/0128-longest-consecutive-sequence/)
@@ -75,6 +79,10 @@ See [attempt conventions](../docs/attempt-records.md) for recording retries.
 - [3. Longest Substring Without Repeating Characters](questions/sliding-window/0003-longest-substring-without-repeating-characters/)
 - [904. Fruit Into Baskets](questions/sliding-window/0904-fruit-into-baskets/)
 
+## Sorting
+
+- [215. Kth Largest Element in an Array](questions/sorting/0215-kth-largest-element-in-an-array/)
+
 ## Stack
 
 - [394. Decode String](questions/stack/0394-decode-string/)
@@ -91,3 +99,4 @@ See [attempt conventions](../docs/attempt-records.md) for recording retries.
 
 - [5. Longest Palindromic Substring](questions/two-pointers/0005-longest-palindromic-substring/)
 - [15. 3Sum](questions/two-pointers/0015-3sum/)
+
