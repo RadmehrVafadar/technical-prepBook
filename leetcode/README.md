@@ -45,6 +45,10 @@ See [attempt conventions](../docs/attempt-records.md) for recording retries.
 - [200. Number of Islands](questions/graph-traversal/0200-number-of-islands/)
 - [417. Pacific Atlantic Water Flow](questions/graph-traversal/0417-pacific-atlantic-water-flow/)
 
+## Greedy
+
+- [55. Jump Game](questions/greedy/0055-jump-game/)
+
 ## Hash Map
 
 - [49. Group Anagrams](questions/hash-map/0049-group-anagrams/)
@@ -99,4 +103,3 @@ See [attempt conventions](../docs/attempt-records.md) for recording retries.
 
 - [5. Longest Palindromic Substring](questions/two-pointers/0005-longest-palindromic-substring/)
 - [15. 3Sum](questions/two-pointers/0015-3sum/)
-
