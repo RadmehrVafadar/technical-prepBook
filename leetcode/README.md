@@ -38,6 +38,7 @@ See [attempt conventions](../docs/attempt-records.md) for recording retries.
 - [53. Maximum Subarray](questions/dynamic-programming/0053-maximum-subarray/)
 - [70. Climbing Stairs](questions/dynamic-programming/0070-climbing-stairs/)
 - [198. House Robber](questions/dynamic-programming/0198-house-robber/)
+- [300. Longest Increasing Subsequence](questions/dynamic-programming/0300-longest-increasing-subsequence/)
 - [322. Coin Change](questions/dynamic-programming/0322-coin-change/)
 
 ## Graph Traversal
@@ -103,3 +104,4 @@ See [attempt conventions](../docs/attempt-records.md) for recording retries.
 
 - [5. Longest Palindromic Substring](questions/two-pointers/0005-longest-palindromic-substring/)
 - [15. 3Sum](questions/two-pointers/0015-3sum/)
+
