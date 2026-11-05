@@ -79,6 +79,7 @@ See [attempt conventions](../docs/attempt-records.md) for recording retries.
 ## Shortest Path
 
 - [743. Network Delay Time](questions/shortest-path/0743-network-delay-time/)
+- [1631. Path With Minimum Effort](questions/shortest-path/1631-path-with-minimum-effort/)
 
 ## Sliding Window
 
