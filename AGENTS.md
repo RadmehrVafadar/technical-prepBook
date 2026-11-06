@@ -37,4 +37,5 @@ docs/                   Interview and attempt-record conventions.
 ## Docs
 
 - Before starting an interview or giving feedback, read [Interview sessions](docs/interview-sessions.md).
+- Before selecting a new mock or changing practice priorities, read [Mock practice focus](docs/mock-practice.md).
 - Before creating or updating an attempt, read [Attempt records](docs/attempt-records.md).

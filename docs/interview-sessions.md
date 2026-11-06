@@ -15,7 +15,7 @@ Minimal intervention makes independent reasoning, implementation, and communicat
 1. Load applicable instructions, this guide, and [Attempt records](attempt-records.md) once per interview; reuse loaded content unless changed or lost from context.
 2. Check for an active attempt in this chat and read its latest saved files.
    Continue it unless the user explicitly requests a new attempt; preserve user code.
-3. For a new attempt, read the current tracker under [Key files](#key-files) and shortlist suitable questions.
+3. For a new attempt, read [Mock practice focus](mock-practice.md) and the current tracker under [Key files](#key-files), then shortlist suitable questions.
    Read only the latest relevant attempt records for those candidates; expand the search only when selection evidence is insufficient.
 4. Privately verify the selected problem's statement, examples, numerical bounds, required interface, and edge-case behavior from an authoritative source.
 5. Create the paired working file and record using [Attempt records](attempt-records.md).
@@ -97,4 +97,5 @@ Leave the workbook unchanged unless the user requests an update.
 
 ## Related
 
+- [Mock practice focus](mock-practice.md)
 - [Attempt records](attempt-records.md)

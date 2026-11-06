@@ -1,0 +1,291 @@
+Mock interview transcript - Minesweeper click update
+Recorded: November 6, 2026, beginning about 11:00:08 AM EST (America/Toronto).
+Source: C:/Users/radme/Videos/2026-11-06 11-00-08.mp4
+Recording duration: 01:24:36.
+
+Machine-generated from the complete recording using local Whisper speech recognition.
+Timestamps are approximate; entries may include more than one speaker.
+Speaker labels are omitted because automatic separation was unreliable in the mixed recording.
+Silence has no transcript entry, and speech may cross a timestamp boundary.
+Bracketed technical terms are contextual corrections; a question mark or "unclear" marks uncertain recognition.
+This is not a verified verbatim transcript; check exact code identifiers against the submitted Python snapshot.
+
+[00:00:00 - 00:00:40] Hello. Hello. Hey, [name unclear], how are you?
+
+[00:00:40 - 00:01:15] I'm good. Give me one second. I need to adjust my volume. Okay, cool. So, we've already done a mock interview session before, so you know how it works. Let's get started right away. Let me share the [Codeshare] link with you in the chat.
+
+[00:01:15 - 00:01:54] And once you're in, select your language of preference, and type something in. Okay. I can select it for you. Do you care about tab size? They come in even numbers, which I don't like. It's 2, 4, 6. Are you familiar with the game, Minesweeper? Yeah, yeah, yeah. I actually made the game.
+
+[00:01:54 - 00:02:30] Okay. That's perfect. It's going to be harder, so... I'm not going to say anything. Okay, so you know how the game works, right? And so, say you're given a grid. It has some cells. The asterisks tell you where the mines are, and so you kind of have to... If someone clicks on this cell, for example, they will get shown a 1. If they click on this one, they get shown a 1.
+
+[00:02:30 - 00:03:10] If they click on the mine, then the game is over, and the location of all the mines are shown, right? Something like that. And so, yeah, I'd like you to create a function that basically takes in the state of the game, and where the user will click next. So, some row and column . And all you have to do is update the game state. Now how you represent the board, that will be up to you. That's part of the question, so we can talk about that.
+
+[00:03:10 - 00:03:48] And, yeah, just sort of update the game of the state after the user clicks somewhere. Okay. Wow. Awesome. So, may I... I'm just going to ask a few questions. For the input, is the input like a list? What is the input? Like for the grid? What is it? Up to you. So, feel free to come up with whatever data structure works best for representing this problem. So, I'll leave that up to your decision to select that the right way.
+
+[00:03:48 - 00:04:22] But, yeah, there might be multiple ways. So, tell me about the trade-offs between them, if you want. The trade-offs between them. I mean, first, I would say... I mean, the easiest one that I can think of would just be to have like a 2D array representing every single cell in for this grid. What do you think of that approach? It's a bit simpler, I would say. Yeah, yeah. So, the input was a grid input. And would it be okay to just call it grid?
+
+[00:04:22 - 00:05:00] Sure. Grid where a list of... And I'm thinking, well, we're going to have... Do they have to be dots? Dots is just we don't know, right? Yeah, that was just my visual representation of the grid. You may choose whatever. So, yeah, I was going to ask you. You said 2D array of what type? You know what type? That's what I was getting at. So, I'm going to say strings for now, right? Because we can have ones of strings. Wait, what is a grid input? Grid...
+
+[00:05:00 - 00:05:36] is a 2D array of strings and then where so X would represent a like exploded bomb. exploded dot represents not discovered yet and we had a star I believe or no or one yeah
+
+[00:05:36 - 00:06:12] so we had a one what did what did one represent again one in this case represented that there's one one mine adjacent to to that cell so if someone were to click here they would get shown a two because there's the one on the bottom left and then bottom top right yeah okay so then we could have numbers okay so let's just see how many numbers can be adjacent to it I would say well there's four maximum bombs that can be adjacent to it right so
+
+[00:06:12 - 00:06:50] the maximum we could get is one two four inclusive would represent the number of bombs that are adjacent correct it can be more can be more than that so like if I'm in this node for example and I have a bomb above it below it to the left and to the right are we counting like these values as well like to the top right are we we 're calling diagonals - yeah okay so since there are diagonals would you represent number of bombs that are adjacent
+
+[00:06:50 - 00:07:27] and diagonal so that would be well four plus one two three four that would be eight realistically max okay so I also wanted to ask like for the other input is it just like a row and column that you click like is it just where you're gonna get RNC yeah I mean whatever
+
+[00:07:27 - 00:08:05] would be easier I think taking RNC is fine with me there's one sorry there's one aspect of the problem that I haven't mentioned which I think is probably the the trickiest part of the problem so you mentioned that you can represent you can show like the number of bombs adjacent to a mine this number can also be zero so there might be spots say top left corner here it doesn't have any adjacent mines but if you click on that then
+
+[00:08:05 - 00:08:45] something interesting happens then you need to visit all of the adjacent cells to that one so you would go into into here you would explore here and you would explore here when you get here there's also no adjacent mine so you go make it a zero and then you explore adjacent one here you see oh there's one there's one mine so then it stops there and then we still have to explore this one this would be one and so when when the user clicks on a mine on a cell that has no [adjacent mines] it has to
+
+[00:08:45 - 00:09:25] like explore all of its adjacent squares or like cells and do that and follow the same process there like okay is there any [adjacent mines] here if not continue exploring and so there's that aspect of the problem as well and like is it just like a one time case where we would be given a grid once and then we just want to what are we returning like are we returning the grid after we select that point yeah so I gave you originally a cell I mean that
+
+[00:09:25 - 00:10:04] the port you could be given in any state so this could be your input to write like this and then RC being I don't know 22 staying that not not 22 maybe row two columns zero one two three four so it's asking you okay explore explore this the cell in the bottom right corner right Or it could be what I gave you originally where, you know, everything was sort of on So it could be any of those states and you want to just
+
+[00:10:04 - 00:10:39] process the state after the click and return or whatever you want to make the change internally or whatever. Make the change to the game state or the board state. Yeah. Yeah. Would the user ever like, as we said, it could be like anywhere, right? Any, anytime. So would the user ever like click the same cell twice? If so, like, how, what would we return? Like if it was, if it expanded and there's nothing there, would it be returned? Did we just return that grid?
+
+[00:10:39 - 00:11:16] So why do you say when there's nothing there? So, I mean, there could be many different cases, right? So maybe the user clicks on something that's already been clicked. So I would expect you to process that, you know, in the appropriate way, right? If they click on something that's already been clicked, nothing happens, right? If they click on something that has been unclicked, then something will happen. So like we open at least that cell.
+
+[00:11:16 - 00:11:55] Optionally, maybe more depending on what's adjacent to that cell. They might click out of bounds. I also want you to look into that. If they click on a mine, game is over. So need to do something there. And then if they click on, and then yeah, handling the, whether we need to explore more from that cell or not, also you need to take into consideration.
+
+[00:11:55 - 00:12:34] So when we, when the game is over and the user would give an input, do we return the grid again or do we return negative one or zero? What would that [unclear]? Depends on you on how do you design it, right? So there may be a multitude of ways of doing that. So I'll leave that up to you. What would be an appropriate response given the situation? If the game is over and the user, well, the question is also like, will the user be able to do that, right? There's also like limitations on the input. The way I would design it was if the user does do it and the game is already in an
+
+[00:12:34 - 00:13:11] overstate, I would just give negative one. But it's expecting an input. No, I could just return negative one. What do you think of that? If the game is already over and the user still gives us an input, we would just return negative one. I guess it depends on everything else on how you, like, how would you update the poor state in that case? And I mean, I think this could be reasonable, but it depends on what else you do.
+
+[00:13:11 - 00:13:49] In terms of the grid, does it have to be a square? So is it like n by n or is it n by m? n by m. So it may not be a square. So what would like the smallest number of n be and the largest number of n? And same thing with n? Say maybe 200. Is that inclusive? Yeah, inclusive.
+
+[00:13:49 - 00:14:25] For both? Yeah. Okay. Okay. 2 to 100 inclusive. In terms of the number of bombs that we can have, is there like a limit there or could it be any? Is it could it be the entire grid? Yeah, that's a good question. I'd say it will depend on the difficulty of the game, but we'll just keep it simple.
+
+[00:14:25 - 00:14:58] There's going to be just one difficulty. Maybe 30 mines. Total always. Always. Okay, so there will be always 30 mines. And in terms of those mines, would we want to have those mines in like a certain order each time or would it have to be randomized? Yeah, they are random for every game, random locations.
+
+[00:15:05 - 00:15:41] Okay, are we able to modify this array? If that's what you want to do, yeah. Okay, so I'm, I'm assuming that since m and n is 2 to 100, the, it's like what would the smallest number of r and c input be? Could it be, could we be given out of bounds numbers or no? It's possible, yeah, you could
+
+[00:15:41 - 00:16:14] be given out of bounds, yeah. But we would be given, it could just, it couldn't be known. Sure, yeah, you'll be given some number, yeah, you just have to verify that it works. 200, right, because that would be, no, it can be out of bounds. Do we know, like, what is the largest number that we could
+
+[00:16:14 - 00:16:48] have for those out of bounds? Could be any number, yeah. Let's just say it can't be negative, right? So actually, could it be? Yeah, we could, we have to consider negative. I guess, yeah, to simplify, maybe it'll be integer for sure. And it will be at least, and it will be positive. Yeah, that's all,
+
+[00:16:48 - 00:17:24] yeah. The size limit, we have the inputs and the input limit. You asked about the types. Is there like an inherent complexity that this problem must adhere by? Like, for example, like, it has to have
+
+[00:17:24 - 00:18:02] a certain memory space or not? No, no bounds. If that changes, I'll let you know. The thing that we are creating, would we be given, so we would be given the grid, correct? Or no? Are we creating the grid ourselves? Yeah, you may assume that the grid has
+
+[00:18:02 - 00:18:39] already been created. And how you access it, that's up to you. But there will be a grid, you can update it. And then you decide what to return to the user is on what makes sense for you. So you don't have to generate the locations of the minds or anything like that. Yeah. And same thing with the input, we would be given it's but in a format of our choosing. Our function is
+
+[00:18:39 - 00:18:44] supposed to grab that grid and that input.
+
+[00:18:44 - 00:19:21] So let's just, the grid will take grid turning, it would be
+
+[00:19:21 - 00:19:59] so if the bones is out of bounds, we would return negative one for this scenario. So return negative one. For now, let's just assume that because we don't want to worry about that edge case for now. Otherwise, otherwise, thin the action.
+
+[00:20:00 - 00:20:35] So update the existing grid. Once the finished, it would return the...how does that sound? Yeah, there's lots of details inside, but there's a good start. One question. So if the gate, you say you return minus one if R and C are out of bounds.
+
+[00:20:35 - 00:21:11] Do you have any other...like do you return minus one and the grid or do you just return minus one? How do you handle that? I was thinking more like, you know, when a function doesn't ...isn't able to like execute properly, it returns an exception and it gives an error number. Okay. That's what I was thinking in terms of returning negative one is like a sign of like this would fail. We could also like return an error message for it.
+
+[00:21:11 - 00:21:44] So if R and C is out of bounds, I think it would actually be better to like print an error message saying it is out of bounds. Or if the game is over, then we could say print game is over. Okay, got it. Okay. Yeah, when you say print error message, you mean literally like prints, prints, these. I would say raise an exception. Okay, raise an exception. Okay. Okay. I'm fine with the exception. Yeah.
+
+[00:21:44 - 00:22:22] Pretty much. So I would say the real bread and butter of this question would be to like create the it's the flooding , right? It would be the flooding function that we have to create. Okay, so let's let's look at like our different cases of what will happen if we click like one cell, right? So the different cases would be one, it could either be the cell is already clicked. If so, then do nothing.
+
+[00:22:22 - 00:22:53] It could be if the cell is a bomb. It's so we would, we could, what would we do if it's a bomb, we could just say game, game, I would say like we would return the grid and say game over would be pretty simple.
+
+[00:22:53 - 00:23:08] Third would be so is not a bomb. So then you would have to expand the adjacent cells around it.
+
+[00:23:08 - 00:23:44] I like to clarify one thing. So you don't always expand. You only expand if the cell that the user clicks has no [adjacent mines].
+
+[00:23:44 - 00:24:24] So if it has at least one adjacent mind, you just update that cell. So that's kind of like your your base case. When you're doing that like the flooding that you're mentioning. If they click on a cell that has no [adjacent mines], then you flood. And then the end for those adjacent cells. If one of them has something that might adjacent, then you sort of stop in that one. I mean, you have to call all the other directions, but on that for now when you stop there. I would say like the way the way that we could this is like still a little bit high level, but yeah, definitely
+
+[00:24:24 - 00:24:59] absolutely the way I was thinking of like just I should probably like say high level. But the actual approach, the first thing that I had my thought about this is problems like this also, especially because like the range is two to one hundred for both of these. So one hundred times two, the maximum that we could have is actually ten thousand. I was thinking like a recursive call , but since there could be ten thousand different ways.
+
+[00:25:00 - 00:25:29] That could hypothetically go above our, that would definitely go above the Python's call stack limit. So maybe not a recursive approach, maybe some sort of iterative. I know for problems like this, it's usually a DFS, some sort of iterative DFS, I think would be nice here. What would you think about that, an iterative DFS?
+
+[00:25:30 - 00:26:14] Yeah, that's a really good point. That is one way of solving it. There might be other ways. I would be okay if you implement it this way, and maybe later we can find other alternatives if we have time. Let's just expand on this one that we're given. I just want to understand everything that we've written down so far. We would like to create a function that takes in the state of the game and then the input row column.
+
+[00:26:15 - 00:26:40] We get to decide what the input is for the grid, but we've decided we would like a 2D array of strings where the value of strings could either be dots, it could be ones and zeros, or it could be a bomb. The max there could be 30 bombs within a grid, okay? And we'd like to develop the flooding algorithm.
+
+[00:26:42 - 00:27:13] We've decided on iterative DFS because it's 2 to 100. For the n and then for the m, there's also 2 to 100. The input range could be positive, so we do have to consider edge cases. So we have to consider it if it goes over. Okay, so we would like that function. Okay, so I'm a little hesitant on making the class right now. So how about we just start with the...
+
+[00:27:12 - 00:27:43] Base case being, and base case being the cell that we start with, the cell that we started, so we would give the cell that we start with. Ooh, but how would we know? How would we know? If I'm given a grid like this, right, how would I know where in the grid I have a bomb or not as I'm expanding?
+
+[00:28:13 - 00:28:27] Making the Minesweeper game.
+
+[00:28:33 - 00:29:07] You can assume that if there's a data structure, that would make it easy to do those lookups. I'm fine with that. You don't need to populate it, but you can just tell me, oh, I would use this, or like this, how I would look up, whether there's a bomb here or not. Does that make sense? Could I have a set maybe? Like a set of rows and columns of where the bombs are? Yeah, that's fine with me. But we would be given that. So we would be given a set where the...
+
+[00:29:10 - 00:29:47] So I would say the, okay, so let me just like, I know I'm doing a lot of high level ones. Usually I go more into like the, uh, the algorithm, but my approach, like high level right now would be to first like validate the input and then we would check if the cell has already been like visited and then check whether the player, uh, has evaded a bomb.
+
+[00:29:48 - 00:29:58] right so if it like if it's there then we don't need to like do the flood right we would do that for our set and then and then I would say we could do
+
+[00:30:06 - 00:30:31] What do you think about that? Would we like to explore more how the DFS would work or would you be comfortable with me like maybe writing the code around it and then later on working on the function of the DFS?
+
+[00:30:33 - 00:31:31] Yeah, either way is good with me. I think we do need to explore the [DFS?] part. We can be there now or later. Yeah, up to you. I would say for now, let's just do a solution like this. Are we allowed to use imports? Are we allowed to use outside functions? Sure, yeah. But what do you want to import? I'm thinking of breadth first search, to be honest. Yeah, a deque would be nice. Okay, yeah.
+
+[00:31:58 - 00:32:33] Okay, so this is why I write it down because I can then go back and read it. Okay, so it was already clicked do nothing. Okay, so fine. So the thing I was debating my head was like whether or not to like, build like different functions for this. But for now, let's just put everything into one. So fine. So we would check, it would be given. So let's just call it grid, it'd be given the row, and then the column that we have.
+
+[00:32:35 - 00:33:15] Grid would be a 2D array. So first things I like to do is like make a rows and then terms of values for this. So we just give zero and we don't need to worry about it being not full because we know we'll have a minimum two. So this will be valid. There's no need to edge case. So then we would do the check. So if not, right, if not, so we would say row would be less than zero.
+
+[00:33:19 - 00:33:58] If row is less than zero, or row is equal to rows, or, so if any of these are true, actually, if any of these are true, then we would return grid. If row is less than column, if column is less than zero, or if row is equal to rows, or if call is equal to calls, we return the grid. And then we're going to check, right?
+
+[00:33:59 - 00:34:59] If the cell is a bomb, and what did we say was, we said, if grid, row, is, we should probably return bombs here as well, right? The grid there as well. Then we would like to, now that we've done that, now we're going to figure out how.
+
+[00:35:00 - 00:35:56] We want to do our BFS queue. Okay, so we're going to need all the directions. We're going to need all the directions. How am I going to do the hard part? I need to figure out cell is a bomb. So we've checked if it's already clicked. Oh, we haven't checked that. So if cell, do we even need to check that? Because if it's already clicked, cell and visited return the grid.
+
+[00:35:58 - 00:36:49] If the cell is out of bounds, return that. If the cell is in bombs, return grid. So we would say if someone visited, we would also need a visited set. So I think, so you're on step three here of your cases, right? So now you have to basically count the number of adjacent mines to the...
+
+[00:36:49 - 00:37:21] To the cell that you're at. I think that logic may be best defining a different function, I would say, like some type of helper function. How do you need to check? Depends on the cell, but all the adjacent, which might be up to eight different cells, then check if there's a mine in between any of those eight cells.
+
+[00:37:29 - 00:37:55] To be honest, the flooding, the way I would actually do the flooding is we would start at like, we would have a queue, right? Because we want to do BFS. We would have our queue, and then we would add to that queue that cell that we start with. And from that cell, we would say, okay, can we go above it? Is this legal? Is this not, is this not illegal? If it's legal, and we're able to visit that set, then we're going to add it to
+
+[00:37:58 - 00:38:28] And we're going to count the number of bombs. And this is after we've checked our current one isn't a bomb. So we would add all the ones all around them to our queue. And we would be going through all of them. How are we going to determine if they are...
+
+[00:38:28 - 00:39:16] I mean, we could say that if like the value is, okay, so yeah, how about we just do that? So let's do a define fill flood and what would that give us? That would give us the grid and then we would row and then the column. Do we want self? Yeah, we do. Self, let's say we would do the rows. We would have to do the rows again, so let's just copy paste this.
+
+[00:39:26 - 00:39:50] This is like a trick I learned from neat code. If you want to go all the directions, you can just do negative zero, because you want to go to its left, and now we want to go to the left but up, so that would be negative one.
+
+[00:40:00 - 00:41:12] We want to go negative one, one, so we want to go right, and then we'd want one be our directions, and then we would have our queue, and then this would be called queue. We would add our, has to be list. Queue is a list, so we have to do row. So after we, like, after we go, so we need to add this to the visited, because, well, if we're going to add our initial one, we're going to need to add it to our visited.
+
+[00:41:16 - 00:41:50] Oof, okay. How's it looking so far? Yeah, I mean, we're just getting started, right? Yeah, so I'm assuming that you, yeah, you're gonna take something from the deck and then check, okay, is this like, is this a minor? Like you have to also check the directions, right? So you have to add all the different cells to your deck, right? Yeah. Okay.
+
+[00:41:51 - 00:42:16] Yeah, so that's what we're doing. So right now, I'm just like saying these are all the directions that we need because we discussed it's eight, right? One, two, three, four, five, six, seven, eight. Those are all the directions around it. And we're going to have to go and explore them and then check like, is this even legal? If it is, then add it. If it's not, or is it a bomb, right? If it's a bomb, then we're going to have to like keep a count and then increase that count.
+
+[00:42:17 - 00:42:47] For that cell, like if I'm starting at a cell and there's like, let's just imagine there's nothing else around it. They're all bombs, sorry. I would have to, as I'm going through them for that one cell, keep track of the number of bombs that I have, such that when I come back, I can determine, hey, this is the number of bombs that this cell had. So, and we can do that just by like, first of all, actually, I'm getting a little bit ahead of myself. First, I should just make the queue. So actually, let's just do the queue.
+
+[00:42:47 - 00:43:43] um and then now we have then it's just like we're gonna have to pop left because this is bfs and we're gonna need to like now we're gonna have to go through these directions so we're gonna have to let's just do direction row direction column and we're gonna need to have like a new direction new column would be new this would be row plus r if this new row new
+
+[00:43:43 - 00:44:35] We're going to need to count, so we're going to have to have like a count because we're going to have to keep track of how many bombs there are, count plus one. And then since we can modify the array, right, we can, we have to change the value at that point. You mean from a dot to a number if there's for the number of adjacent mines?
+
+[00:44:39 - 00:44:55] Yeah, you do, but not immediately, right? You still have to go through all the directions first, and then you'll have a count, and then you do it then. Does that make sense? Yeah, yeah, yeah, after the count. Okay, so around here.
+
+[00:45:07 - 00:45:44] Okay, what else? So now what happens is, okay, now we have our base case, right? Now we have our base case, we've determined that this is what happens when you have bombs around that one, right? But what happens when you have cells that don't have any bombs, like the adjacent, what happens if they don't have? I think we would have to
+
+[00:45:48 - 00:46:20] Five minute warning. Yeah. So yeah. So if, uh, yeah, go ahead. I would say if the count is zero, if the count is zero, that would mean there's no bombs around it. Then we would have to go through the directions for that one. So darshans, I'm just going to write these pretty quickly. And the same thing up here, because we're going to have to add it. So new row, new column.
+
+[00:46:22 - 00:46:50] I'm skipping a little bit because of time, but basically what we're doing is if the count is zero there, we're going to have to expand on that one and check, okay, how about this one? Is this new cell? Will that one have other ones surrounding it, right? Because we want to expand. If there's nothing around it, then we expand. And in that scenario, we're going to have to check the directions of that one and see the number around that one.
+
+[00:47:24 - 00:47:47] What are you doing in line 122? Don't worry about that. Let's focus more on the logic here. If the count is zero, then...
+
+[00:47:47 - 00:48:14] You need to sort of add all of those adjacent cells that have not been visited to the deck, right, to your queue. So you have some logic already here. I think what might work is that you can check if those particular shares are valid.
+
+[00:48:14 - 00:48:44] Like they're not out of bounds, for example, and they have not been visited, then you can add them maybe to like a temporary queue. And then at the end, you check if the count is zero, then add anything on the temporary queue to your queue. Otherwise, you don't really need to add them. You just discard the temp queue. Does that make sense? Because I feel like you're sort of redoing the logic, like the for loop creating the new R and new C and then you check.
+
+[00:48:47 - 00:49:23] There's some duplicate logic, I mean, it's fine, but just saying that's another way of doing it. And so that we would have two queues, we would have the main queue and then we would have the temporary queue. And so, oh, okay. But the way I was like planning to do this one was, I think it works out to the same because this is just, where's the, did I write the functionality for it? Oh, it's up here. But yeah, so if like the, I was planning to say like, oh.
+
+[00:49:24 - 00:49:54] If the new row, like this is basically our condition that we had before, but if we want to add it to the queue, this one also has to like be valid. It can't just be the one that we were given. So that's a century yet. So if new row, new column is less than zero. Oh, yeah, it's less than zero. Or if column is equal to calls.
+
+[00:50:00 - 00:50:50] Or if it's in bombs, right? So if new bombs, or if it's in visited, so if then we would, if that was the case, we would just do a pass here. So if any of these things are true, we would just do like a continue. Otherwise, we would add this to our visited to our queue.
+
+[00:51:08 - 00:51:56] Yeah, but I just need to figure out this part of the function. So we've implemented flooding, oh, fill, blood. We can on our, in our grid can only give us a zero X one or two, or what would E be, E be empty? Sorry, where, where are you at? At the top of the code share. Would E be empty? Okay. So if the user clicks on the E, it has like no [adjacent mines]. So it's going to do the flood filling. Yeah. Okay. Starting there.
+
+[00:52:32 - 00:52:49] The new ones that are appended.
+
+[00:52:51 - 00:53:32] But the ones that aren't added, oh, it could be these ones, the ones that we add the row and column, these ones aren't added to the visited set. I would say, yeah, when you pop something, then you add it to the visited set instead of when you add them to the queue. And then as you're going through, or when you pop, you have to check, is this visited, right? If it is visited, then you don't need to process it.
+
+[00:53:33 - 00:54:07] Then you just continue. If it's unvisited, then you add it to the visited set so that next time you don't run over it again. But anyway, we've run out of time. I wanted to make sure we have enough time to get feedback. So let's start with that. So yeah, a few things. So you asked a lot of questions. So that was pretty good. You asked...
+
+[00:54:08 - 00:54:45] Yeah, I mean, you have like a very comprehensive set of questions, right? You asked about the limits of the inputs, that was good. Um, usually people don't ask me these for this question. So I had to kind of think what to give you. Um, what I wanted to get at was kind of at the discussion that you hit later of like the grid is very large, but there's not a lot of mines. And so you, you made them, you mentioned like, oh, recursion may not work as it might go. It's over the, the, the limit of the call stack. And that was pretty good. I liked that having that discussion and that led you to
+
+[00:54:46 - 00:54:59] To a specific path. So that was great. I like hearing those types of discussions. I felt that you...
+
+[00:55:00 - 00:55:29] I mean, asking questions is good, but it also felt like you were asking for direction in many places. And I think an analogy that I like to use in this case, I don't know if you've, maybe you have no someone in your life like this where you're in a car, you're not driving, someone else is driving, but you're next to them. And they keep asking you, oh, can I make a right here? Can I make a left here? What should I do?
+
+[00:55:30 - 00:55:57] You're driving. You should be making the decisions. If you say something that I don't like, maybe I'll react to it, right? So you should think of interviews like that, where you should be the person driving the interview. You're saying, oh, I'm going to do this. I'm going to make this assumption, right? And then if I don't like it, then I'll respond. But if you're always asking me, I feel like I'm answering. I'm like,
+
+[00:55:58 - 00:56:24] Not driving for you, but I'm like the main decision maker, which for junior positions, for internship positions, it's not too bad, right? Because you are expected to be asking lots of questions. You're not expected to know everything. You are expected to get some guidance. However, if you want to make the next step, or if you really want to impress the interviewer, I think...
+
+[00:56:25 - 00:56:49] It should be a very small change, really. You were doing all the right things, but you were always asking instead of just saying. When you said, for example, based on the inputs, the range, it could be up to 10,000 cells. I'm going to do this because recursion will not work. I really like that. You could have said, oh, should I use...
+
+[00:56:50 - 00:57:18] This iterative DFS because of the recursion limits, right? Yeah, I mean, you got to the right place, but I'd just like you to just say it, right? Rather than being unsure, right? And so that's like one thing. So there were many, many different instances where I feel like you're arriving at the right place, but you're just asking, like, just do it, right? And then some questions were...
+
+[00:57:19 - 00:57:43] I think I told you a few times that you have freedom to represent the board however you want. All the design decisions are yours, but then you're asking, can I modify this or can I do this? I gave you complete freedom, so take advantage of it. That would be like...
+
+[00:57:44 - 00:58:01] Not a concern, but I think it will like you'll get a lot of respect from the interviewer if you if you just say what you feel is the right thing to do and what you are gonna do and then just wait for them to like you know if they don't like it at all they'll tell you right.
+
+[00:58:03 - 00:58:28] I think you spent a lot of time there, but I'm not sure how you felt whether it was like a productive use of the time. There were some instances where I felt like maybe you wrote too many things and then you were like trying to refer back to your notes and you still didn't follow what you wrote because it was written in too many different places, right? So maybe the...
+
+[00:58:28 - 00:58:43] The note taking was a bit messy because of just too many things to keep in mind. What you have in the notes was good, but then when you were writing the code, you struggle a little bit, even though you had it already.
+
+[00:58:48 - 00:59:25] So yeah, you spent about 20 minutes writing all these questions. I think that's an appropriate amount of time. I was a bit concerned about, what was it? You were talking at a high level here about what you were going to do. But you were not being very precise. For example, you said, oh, I'm going to print an error message. And so when I hear you're going to print an error message, I think literally you're going to call the print function. And so I was like, I don't like that. And so that's why I sort of stepped in. But they said, oh, no, no, I'm going to.
+
+[00:59:26 - 01:00:03] Raise an exception. I thought, okay, that's good, better. But then when you wrote the code, you didn't do that. So it's like, what did you actually mean? Right? So make sure that if you say you're going to do something in that when you're, you know, at a high level, then try to follow up with that or say why you didn't, like, make a response to that, like, why didn't you do that later? And so... And that's kind of part of the problem too, right? Like, what do I return to the user? What's appropriate? And I think there were some, maybe some discussions that we didn't have here.
+
+[01:00:03 - 01:00:41] For example, again, I gave you complete freedom about data structures, all of this. And I think, for example, this, you're computing the rows and columns every time someone clicks on on a cell, right? And so I think you realize, okay, maybe I can set this up right after the grid is created. So maybe in some, in the constructor or something, and then this would be a variable within the class that you just have access to it , right? So I think something like
+
+[01:00:41 - 01:01:18] that, like, if the designer would have been a bit better, I felt you treated too much like, like a LeetCode style problem, where you just get the inputs, and then you just deal with whatever inputs are there, and you're usually not given a class to play around with. Anyway, it is a small thing. But again, when you have, when you're given a lot of freedom, make sure to consider, okay, if I have a class, will that make everything less messy? Or like, will it help me not write duplicate code? So for example, here again, you have this logic of checking if a
+
+[01:01:18 - 01:01:58] cell is in bounds or out of bounds, which is great. Now, this is not entirely right. So the row here, like we mentioned, could be any number, right? So it could be greater than, right? And so I think a small detail. But this, you use this logic again later, I think over here. And so you could abstract this again into a helper function within your class. And then you can refer to it later in other things. I think that could also
+
+[01:01:58 - 01:02:35] help. For example, here, you wasted time rewriting that same logic. A trick that might be helpful is like, instead of writing out this logic, you could say, I'll assume that there's this function like is in, is out of bounds, out of bounds. And then this takes the grid, the row and the column. And then it just you abstract out the logic of what's in here. I know more or less what would be in here. And then if you have
+
+[01:02:35 - 01:03:12] time at the end, you implement this function, like you don 't have to worry about it now. And then later, you know, you have, I don't know, five minutes left, then okay, let me go back to the is out of bounds function and implement the right return, whatever the logic is. So try to, this is a good trick too, so that you are saving time. And then this is, it's not like the main thing that I'm trying to extract from here. Like this logic is fairly
+
+[01:03:12 - 01:03:50] simple. And so if even if you don't get to it, because there's other more difficult logic, like for example, everything on on the [fillFlood] function, right ? That's like the main, like the juicy part of the problem. That's where I want you to spend the most time on then. I don't care if you don't get to this, like if, if you can do this, then I assume that you can do this is out of bounds function easily. Okay, what else? So there was also another moment where you mentioned
+
+[01:03:50 - 01:04:29] like, Oh, how do I find out if a sale is a mine, right? And so I gave you again, complete freedom and you chose, Oh, I'm going to represent it as a set, like great, right? That's what I'd like to see. Let's see. Yeah, here, I think we go back to, you know , what, what do we return to the user, right? If, if a cell is visited, if it's out of bounds, if it's a bomb, right? So you always here return a grid. But these are like separate things, right? So if a cell has been visited,
+
+[01:04:29 - 01:05:08] I would expect nothing happened, right? So I think this is fine. If it's out of bounds, let's say, I think the way that you implement, I think you would also expect nothing to happen. But if you click on a bomb, I think something should happen like game over, right? So it's like a different game, game state at the end. I think I mentioned something like you have to show The location of all the other mines. I think, I mean, I don 't mind if you don't get there, but I think you have to at least sort of acknowledge that,
+
+[01:05:08 - 01:05:43] okay, there's something different between game over and something has been clicked already, right? A small thing. And let's see, then, okay, we got to the fill flood, like this where I guess all the magic happens. I think you are very close. I think you just need to take into account the visited set. There's some duplicate logic, which I mean, it's fine. But yeah, you add things to the queue. And then you need to process the queue
+
+[01:05:43 - 01:06:23] while there's still something in it. I think there's also other things that maybe, I think with that, with more time, maybe you would have realized, because we spoke a little bit about it earlier, you mentioned that, okay, the cell, the grid is large. There's very few mines. One strategy that that could work too is that you could have a 2D list of the number that contains only the number of adjacent cells, which are mines for each cell. And this is very easy to compute,
+
+[01:06:23 - 01:07:03] because everything can be initialized to zero. And then you iterate through the mines. And then you go to the adjacent cells to it and add a one on that grid. And so by the end, you can just do like a quick look up on that. So if you do the lookup, and if it's zero, then you go to all the directions. If not, then you just output or like update the grid to that count. So you save like an extra for loop. And you do all the computation, like you preprocess it, right, instead of doing it on the fly. So that is one
+
+[01:07:03 - 01:07:42] aspect of the problem where maybe you didn't consider, it's like, okay, can I pre compute everything? Or do I compute it on the fly? So I don't expect everyone to get there. Just like if you want to get, you know, beat most people, I think that would be one direction too. And then talking about the trade offs. And then yeah, and then just going back to the things that you're passing through the function. I mean, this is fine. Again, if you see this in like a LeetCode
+
+[01:07:42 - 01:08:21] style problem, or like in LeetCode itself, they'll probably give you this. But also consider that, for example, for bombs, it's a it's like a static thing, it doesn't change. And so that could be it's better represented as a like a member variable to your class that you can reference. The grid is a bit different too. Like you could also consider the grid as like an internal thing. And then it's not passed through. And then you just update that and then have like
+
+[01:08:21 - 01:09:01] just a method that you can reference the grid, right. And so maybe some discussion here of like, pass by value pass by reference. But I mean, we didn't discuss too much of that. Wrong column always changes, depending on the click. And visited as well could be like an internal thing, an internal variable to the class. But we didn't have a lot of discussion about that. But it's fine. So yeah, I felt because you mentioned earlier, oh, yeah, I know minesweeper
+
+[01:09:01 - 01:09:40] . But I felt like maybe you didn't know too much. Or maybe you got confused with something else. Based on the logic that you wrote, it felt like perhaps you didn't have too much experience with the problem. And I got excited because I thought, oh, maybe he'll get this done like really quickly. And I'll challenge him with a lot of different things. But I think you just did kind of like just what a regular candidate would do. Like I didn't feel like you had like a big advantage. I feel like you still asked lots of questions about the problem. But that's fine.
+
+[01:09:40 - 01:10:17] How did you feel through the interview? Did you feel like you lacked a lot of direction or like didn't know what to do? Or like, what were your struggles internally for you? I would say like the way like having so much freedom really like threw me off. The problem itself, previously there was a description of the problem above it, but this one didn't have a description. Also, the input grid didn't even have an input there, and I'm so used to...
+
+[01:10:17 - 01:10:46] The way I do my practices, I'm so used to being given the inputs. I did think in my head, oh, maybe it'll be last time, and then one of out of the two, I won't be able to get the input, and I'm going to ask that question and clarify. But I think the real challenge here was me driving those cases and not just being given clear inputs, being comfortable with not having exact problem sets, really discovering
+
+[01:10:47 - 01:11:26] The layer behind it, I think the parts that I felt comfortable doing was the recursive call stack. The thing I've really learned is to look at the ranges of the values that were given and then say what is the best approach based on them. Because if it's too low, a lot of times it's dynamic programming. We can use caching there. The part for Minesweeper that I knew about was like, I just knew we had to use either BFS or DFS for
+
+[01:11:27 - 01:11:58] The problem, but yeah, that's why I was able to even like write all of these. And yeah, I'm pretty sure like, you know, for these problems, it's pretty standard to have this directions list and be able to like, I'm online 95 and be able to like, say, Oh, is it out of bounds or in bounds? Yeah, I think the part where I really struggled with was like, Dealing with abstract requirements and being comfortable with just coming up with your own solutions and taking the lead there.
+
+[01:12:00 - 01:12:27] Yeah, I think that's fair. I think you should always be prepared for any type of interview. So I think maybe, yeah, you were kind of expecting something more defined, more structured. But this, I use this question at Google, I'll just have different expectations for senior candidates to like interns, right. And so I think it's good that we found this, because then
+
+[01:12:28 - 01:12:57] You won't have this type of surprise, maybe at a future interview. And I think that's kind of valuable. But I feel like with some adjustments, you probably save more time and have more time for implementation. And just the way that you speak can, you could turn a lot more confident than like, because you made the right decisions, but you were just asking me about it. I'm like, I don't know, dude, I gave you the freedom to do whatever you wanted.
+
+[01:12:59 - 01:13:30] But anyway, I feel it wasn't too bad. I don't know if you feel like you totally bombed it. I don't feel that way. Like I got enough like coding signal. Is it problem solving? It was good. Yeah. Because they were points where, yeah, like, you know, what is the solution? Like, is it going to be recursive or iterative? And we had that discussion and you made the right call, right? I'd say,
+
+[01:13:31 - 01:13:53] We didn't get enough time for like testing or I felt like there were like enough small details on the code where you didn't catch, you know, like for example, like the out of bounds stuff and like the way that you return, like just the grid when there was a bomb, like small details like that.
+
+[01:13:57 - 01:14:29] Yeah, also small things like that. If there's only a few, it's fine. But if there's like an accumulation of them, it could be a sign of something else. And yeah, I guess, yeah, like the communication part was like, so, so right, like you, you had the right ideas. It's just the way that you were communicating them. And at some points, I thought, okay, did you like I didn't feel like you had like a really good understanding of the problem. But I feel like you were
+
+[01:14:30 - 01:14:59] You had this idea of like, oh, I'm just going to do this flood filling. And it's like, okay, I don't want to interfere too much. But yeah, I had to, I think, for example, here you were kind of stuck, like you didn't know what to do next, but with some hinting you got there. And yeah, and I think the trick of, especially for these types of problems where there might be a lot of implementation that you
+
+[01:15:00 - 01:15:30] We have to do a lot of coding. Always assume that there's this function and then if I have time later, I'll write it. I can give you a lot of time back. For our next session, expect anything. Don't assume that it's going to be in one way or another.
+
+[01:15:34 - 01:16:08] That can help you not have these expectations and then be thrown off. I think that can be hard to come back from sometimes. Okay. Any other questions or concerns? Like I was, to be honest, like before this, I was like a little, little cocky. I was a little confident that they're like, Oh yeah, I can do this one. Then I can also, I'll ace my interviews, but yeah, now I'm like really questioning it. But I don't know. It's just like, um, also like, how do you deal with like, um,
+
+[01:16:09 - 01:16:35] Nervousness like during the interview, because I think I made a lot of mistakes here that I wouldn't have normally done. Yeah, I think I mean, it's just a matter of just putting more reps into it, right? Like, the more interviews you do, the more comfortable you'll feel. Especially if you have a lot of successes, then you'll feel like, oh,
+
+[01:16:36 - 01:17:04] I've done this so many times, I've been able to complete the problems or like do well. I know I can do, I can do well, right? If you know that there's a hope that you can do well, then I think you won't be as nervous. But if you have just internal thoughts of like, Oh, I'm interviewing at a big tech company, and they're gonna drill me on all these things, then you'll have doubts, right? I feel like you have all the right tools.
+
+[01:17:06 - 01:17:35] It's just a matter of implementing some of that feedback, iterating on getting continuously better at it until there's going to be a time where you won't be thrown off, you won't be nervous, you know what to expect, you know what might happen. It's just like we have this fear of the unknown, right? And so if you don't know what's going to happen, you're going to be a bit nervous. But if you have done lots of interviews, you've kind of seen a lot of things that will happen.
+
+[01:17:36 - 01:18:07] Then you'll feel more comfortable with whatever may happen. Do you think like you said like for different levels you have like different expectations? Would you say like what is like the thing that I could improve on to like maybe meet the interim level expectations? I don't have like a lot of time until now to the interview. It's only like a couple of weeks. So I want to know like what is like
+
+[01:18:08 - 01:18:46] Other than, you know, like, of course, like, yeah, definitely using the problems like this. But like, what would be like the one aspect where I should like work on the most or really focus on before, you know, I start the interview? Yeah, so I think so. Let's see. I think your problem solving is fine. I mean, you sort of arrived at a at what the solution would look like. I think maybe the pace could be a bit better. And I already gave you some some tips on how to
+
+[01:18:47 - 01:19:18] Take less time. I think for the DFS part, for example, today, I mentioned earlier how you should invest time designing your code, your solution before writing it out. So I felt like you had a good grasp of everything until the fill flood, right? But when we look at the code, you spent maybe too much time on...
+
+[01:19:18 - 01:19:49] Defining these things where the code is like very little. And then in the most important part, which is the fill flood, then we have very few details up here in all your comments, right? So trying to like, there's a trade off there too, of like, how much time to spend on like the core parts of the problem versus, you know, some of the simpler things, but having having it all hashed out. So I think they're maybe good to a bit better.
+
+[01:19:52 - 01:20:20] But yeah, you spent 20 minutes, which I think is reasonable, but it wasn't comprehensive, right? We're still missing the DFS part, right? So I think an extra 10 minutes there, I think maybe the coding would have been more straightforward or with fewer questions. I don't know if it had something to do with the fact that you had seen like a similar problem before and you thought,
+
+[01:20:20 - 01:20:51] I've done this before, it should be no problem. I don't know, maybe something like that. But I think just small tweaks on the communication, again, if you can drive the interview is better. I think for intern, you don't necessarily have to do that, but it'll make a better impression, definitely. But communication, I would say it's good. Yeah, the pace could do a bit better and that affects
+
+[01:20:51 - 01:21:23] The testing signal, right? Because I don't see no evidence of testing. It's going to be hard to justify getting a good score there if you didn't have time to. And then the other thing, again, like a minor thing, it might have been because, again, you've seen a similar problem before. Like there were some instances where I gave you direction, but you kind of like rejected the direction and you sort of, okay, I'll just do it my way or like whatever.
+
+[01:21:25 - 01:21:55] And sometimes that can be looked very negatively, especially for interns, because you're expected to be given guidance and then just follow that or execute on tasks that you're given. But if you sort of reject it or decide to go your own direction, there might be some hesitation. Or they won't be exactly looking for this, but if they see it in your two interviews, then that might be a bad signal.
+
+[01:21:56 - 01:22:27] And so, yeah, just make sure to listen to the interviewer and respond to whatever hints they give you. If you disagree, you can say respond why, but I didn't feel like there was like a strong reason to not go with my hints that I was giving at the time. Like, I don't know if you remember the instances, but that'll be one thing. Yeah, but otherwise...
+
+[01:22:27 - 01:22:59] Yeah, I feel like just more practice. I think we just, we have one more practice session. So I think, hopefully on that one, you can do like a very strong performance, then I'll feel like, okay, you're going to do well. But otherwise, yeah, just continue looking at different problems, expose yourself to your weaknesses, and just to just grind more LeetCode. I feel like that the way that the structure that you use during the interview is good, right?
+
+[01:23:01 - 01:23:37] I think it's just maybe the pace could be better so that you get to that final testing phase. I think I had for our other interview, I think it was kind of similar where we kind of ran out of time by the end. But yeah, yeah, we'll have the next session. Yeah, just grind more and then yeah, we'll see how it goes. Thank you very much. I'll just keep doing the LeetCode and I'll try to...
+
+[01:23:37 - 01:24:00] Give like similar problems where I drive instead of just being given those inputs and yeah. Yeah I mean that it's that that one is hard to to to practice because on LeetCode you're just given everything right and so. I still use my own agent for that.
+
+[01:24:03 - 01:24:31] So the thing that I do is like I was given like something very similar to like what you gave last time. It was like a one sentence and then an example input and then output. And I just go from there. So yeah, that's all. Okay. Okay, cool. Yeah. Then see you. Is it next, next Friday? Yeah, next Friday. Okay. Sounds good. All right. Bye-bye.
