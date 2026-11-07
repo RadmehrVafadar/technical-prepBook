@@ -30,6 +30,7 @@ See [attempt conventions](../docs/attempt-records.md) for recording retries.
 ## Data Structure Design
 
 - [146. LRU Cache](questions/data-structure-design/0146-lru-cache/)
+- [208. Implement Trie (Prefix Tree)](questions/data-structure-design/0208-implement-trie-prefix-tree/)
 - [380. Insert Delete GetRandom O(1)](questions/data-structure-design/0380-insert-delete-getrandom-o1/)
 - [981. Time Based Key-Value Store](questions/data-structure-design/0981-time-based-key-value-store/)
 
