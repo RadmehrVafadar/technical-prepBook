@@ -51,6 +51,8 @@ See [attempt conventions](../docs/attempt-records.md) for recording retries.
 
 ## Greedy
 
+- [435. Non-overlapping Intervals](questions/greedy/0435-non-overlapping-intervals/)
+
 - [55. Jump Game](questions/greedy/0055-jump-game/)
 
 ## Hash Map
