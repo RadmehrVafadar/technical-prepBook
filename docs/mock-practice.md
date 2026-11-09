@@ -20,8 +20,10 @@ Recognizing another algorithm does not demonstrate that this gap has closed.
 Review the latest feedback and keep one primary focus for the next attempt.
 For the next full mock, the primary focus is completing the interface and every agreed case.
 Between mocks, practice explaining the core state transition, successor conditions, and stopping rule concretely; naming a traversal alone is not a complete plan.
-Use an unfamiliar problem with a small state transition and meaningful boundary behavior so memorized code does not substitute for reasoning.
-Include both an open representation choice and a fixed-interface problem across the next two full mocks; keep the same completion and verification criteria for both.
+Prioritize an independent retry when a relevant problem's latest attempt was unfinished, incorrect, or needed a hint, solution, or video.
+Use the tracker schedule and the latest saved feedback to choose among those problems.
+After a clean retry, use an unfamiliar problem with a small state transition and meaningful boundary behavior to check whether the skill transfers.
+Practice both open representation choices and fixed interfaces, with the same completion and verification criteria for both.
 Keep problem identity, technique, constraints, and diagnostic examples private until the normal interview process reveals them.
 Privately check that numerical bounds, example states, and fixed counts are mutually consistent before presenting the task.
 
