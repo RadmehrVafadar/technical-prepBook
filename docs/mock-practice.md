@@ -22,6 +22,8 @@ For the next full mock, the primary focus is completing the interface and every 
 Between mocks, practice explaining the core state transition, successor conditions, and stopping rule concretely; naming a traversal alone is not a complete plan.
 Prioritize an independent retry when a relevant problem's latest attempt was unfinished, incorrect, or needed a hint, solution, or video.
 Use the tracker schedule and the latest saved feedback to choose among those problems.
+For new mocks, wait at least 24 hours after the most recent known attempt, solve, or solution review before offering the same problem again.
+When the user asks to defer a retry, record its earliest eligible time in the session summary and prioritize it in a later eligible mock.
 After a clean retry, use an unfamiliar problem with a small state transition and meaningful boundary behavior to check whether the skill transfers.
 Practice both open representation choices and fixed interfaces, with the same completion and verification criteria for both.
 Keep problem identity, technique, constraints, and diagnostic examples private until the normal interview process reveals them.
@@ -35,7 +37,7 @@ When a choice is deliberately open, let the candidate make and justify it withou
 Let the candidate choose their representation, settle a concise input/output contract, and begin a complete implementation.
 Observe whether planning detail goes into the core operation or is concentrated on routine validation and naming.
 Do not supply a checklist, missing branches, invariant, test cases, or algorithm as unsolicited coaching.
-When the candidate is blocked, use the existing minimal-intervention rules and record any assistance.
+When a material error appears, use the focused intervention rules in [Interview sessions](interview-sessions.md#during-the-interview) and record any assistance.
 If planning circles without implementation, ask the candidate to implement their current approach.
 Preserve productive thinking silence; do not treat filler or a pause alone as a reason to intervene.
 

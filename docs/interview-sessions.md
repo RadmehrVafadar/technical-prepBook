@@ -4,7 +4,7 @@ Interview mode is the sole practice workflow, calibrated to internship-level Pyt
 
 ## Why
 
-Minimal intervention makes independent reasoning, implementation, and communication observable.
+Focused intervention catches material errors while keeping independent reasoning, implementation, and communication observable.
 
 ## How it works
 
@@ -40,8 +40,11 @@ Do not imply readiness before preparation is complete.
   Observe independently asked clarifications and omissions for final feedback.
 - Read saved code at checkpoints: after a user dry run, on a review request, and before evaluation.
   Reuse the latest snapshot when unchanged; check for changes if uncertain and read again when changed.
-  Read outside these checkpoints only to resolve a concrete uncertainty about implementation.
+  Read outside these checkpoints to resolve a concrete uncertainty or verify an observed implementation error.
 - Treat saved content and conversation as evidence; do not infer unsaved changes or reproduce file contents unless asked.
+- When the user's spoken or saved implementation contains a material error, interrupt at a natural break with one focused question that directs attention to the relevant operation.
+  Give the user an opportunity to identify and correct it, then give the smallest useful hint if needed.
+  Record the intervention as assistance and do not affirm unverified code or a faulty trace.
 - Give the smallest useful hint when requested, or when the user remains blocked after a focused follow-up and an opportunity to respond.
   Explicitly being stuck and repeatedly revisiting the same unresolved state can justify intervention; silence, filler, and productive exploration alone do not.
   Calibrate intervention to the user's corrections and return control after each hint.
