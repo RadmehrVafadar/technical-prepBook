@@ -52,6 +52,7 @@ See [attempt conventions](../docs/attempt-records.md) for recording retries.
 ## Greedy
 
 - [435. Non-overlapping Intervals](questions/greedy/0435-non-overlapping-intervals/)
+- [Maximum value from unit-weight items](questions/greedy/maximum-value-unit-weight-items/)
 
 - [55. Jump Game](questions/greedy/0055-jump-game/)
 
@@ -118,4 +119,3 @@ See [attempt conventions](../docs/attempt-records.md) for recording retries.
 - [Interview 2026-11-05 17:22:40](questions/uncategorized/interview-20261105-172240/)
 - [Interview 2026-11-09 17:59:24](questions/uncategorized/interview-20261109-175924/)
 - [Interview 2026-11-09 18:01:45](questions/uncategorized/interview-20261109-180145/)
-- [Interview 2026-11-09 18:04:47](questions/uncategorized/interview-20261109-180447/)
