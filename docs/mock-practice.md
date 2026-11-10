@@ -17,10 +17,16 @@ Recognizing another algorithm does not demonstrate that this gap has closed.
 
 ### Between mocks
 
+For the next mock, use [416. Partition Equal Subset Sum](../leetcode/questions/dynamic-programming/0416-partition-equal-subset-sum/), explicitly requested after the November 10 unfinished retry.
+This user-selected retry takes priority over automatic question selection and the deferred Minimum Height Trees retry.
+
 Review the latest feedback and keep one primary focus for the next attempt.
 For the next full mock, the primary focus is completing the interface and every agreed case.
 Between mocks, practice explaining the core state transition, successor conditions, and stopping rule concretely; naming a traversal alone is not a complete plan.
-Prioritize an independent retry when a relevant problem's latest attempt was unfinished, incorrect, or needed a hint, solution, or video.
+Check the latest saved evaluation's advance recommendation before selecting a retry.
+Exclude problems with a latest recommendation of Yes unless the user explicitly requests that problem or a passed-problem review.
+A hint, review flag, confidence score, or tracker status does not override that pass.
+Among problems not yet passed, prioritize an independent retry when the latest attempt was unfinished, incorrect, or needed a hint, solution, or video.
 Use the tracker schedule and the latest saved feedback to choose among those problems.
 For new mocks, wait at least 24 hours after the most recent known attempt, solve, or solution review before offering the same problem again.
 When the user asks to defer a retry, record its earliest eligible time in the session summary and prioritize it in a later eligible mock.
