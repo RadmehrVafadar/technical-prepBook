@@ -108,6 +108,7 @@ See [attempt conventions](../docs/attempt-records.md) for recording retries.
 
 - [236. Lowest Common Ancestor of a Binary Tree](questions/tree-traversal/0236-lowest-common-ancestor-of-a-binary-tree/)
 - [543. Diameter of Binary Tree](questions/tree-traversal/0543-diameter-of-binary-tree/)
+- [2096. Step-By-Step Directions From a Binary Tree Node to Another](questions/tree-traversal/2096-step-by-step-directions-from-a-binary-tree-node-to-another/)
 
 ## Two Pointers
 
