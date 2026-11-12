@@ -122,3 +122,5 @@ See [attempt conventions](../docs/attempt-records.md) for recording retries.
 - [Interview 2026-11-09 18:01:45](questions/uncategorized/interview-20261109-180145/)
 - [Interview 2026-11-10 18:10:00](questions/uncategorized/interview-20261110-181000/)
 - [Interview 2026-11-10 18:11:25](questions/uncategorized/interview-20261110-181125/)
+- [Interview 2026-11-12 18:05:35](questions/uncategorized/interview-20261112-180535/)
+- [Interview 2026-11-12 18:20:07](questions/uncategorized/interview-20261112-182007/)
