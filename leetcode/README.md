@@ -43,6 +43,7 @@ See [attempt conventions](../docs/attempt-records.md) for recording retries.
 - [300. Longest Increasing Subsequence](questions/dynamic-programming/0300-longest-increasing-subsequence/)
 - [322. Coin Change](questions/dynamic-programming/0322-coin-change/)
 - [416. Partition Equal Subset Sum](questions/dynamic-programming/0416-partition-equal-subset-sum/)
+- [931. Minimum Falling Path Sum](questions/dynamic-programming/0931-minimum-falling-path-sum/)
 
 ## Graph Traversal
 
