@@ -27,7 +27,6 @@ modify? yes
 what are directions? up, down, left, right
 are the number placements random? yes
 """
-
 """
 Approach (iterative bfs or dfs)
 Time: O(n*m)
@@ -38,7 +37,7 @@ class Solution:
   def __init__(self, grid):
     self.ROWS =  len(grid)
     self.COLS = len(grid[0])
-    self.grid = gird
+    self.grid = grid
     self.stk = []
     
   def countEnclosedLandCells(self):
@@ -73,7 +72,7 @@ class Solution:
         stk.append((row, self.COLS-1))
         grid[row][self.COLS-1] = 0
     
-    dfs(stk)
+    self.dfs(stk)
     
     numLandCells = 0
     for row in range(self.ROWS):
@@ -85,14 +84,14 @@ class Solution:
     
     
   def dfs(self, stk):
-    r, c = stk.pop()
     directions = [(-1, 0), (1, 0), (0, -1), (0, 1)]
-    
-    for dr, dc in directions:
-      newR, newC = (r + dr), (c + dc)
-      if (0 <= newR < self.ROWS and 0 <= newC < self.COLS and self.grid[newR][newC] == 1):
-        stk.append((newR, newC))
-        self.grid[newR][newC] = 0
+    while stk:
+      r, c = stk.pop()    
+      for dr, dc in directions:
+        newR, newC = (r + dr), (c + dc)
+        if (0 <= newR < self.ROWS and 0 <= newC < self.COLS and self.grid[newR][newC] == 1):
+          stk.append((newR, newC))
+          self.grid[newR][newC] = 0
     
     
     
