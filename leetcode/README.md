@@ -12,6 +12,7 @@ See [attempt conventions](../docs/attempt-records.md) for recording retries.
 - [22. Generate Parentheses](questions/backtracking/0022-generate-parentheses/)
 - [39. Combination Sum](questions/backtracking/0039-combination-sum/)
 - [79. Word Search](questions/backtracking/0079-word-search/)
+- [Valid grid configurations](questions/backtracking/valid-grid-configurations/)
 
 ## Binary Search
 
