@@ -126,3 +126,4 @@ See [attempt conventions](../docs/attempt-records.md) for recording retries.
 - [Interview 2026-11-10 18:11:25](questions/uncategorized/interview-20261110-181125/)
 - [Interview 2026-11-12 18:05:35](questions/uncategorized/interview-20261112-180535/)
 - [Interview 2026-11-12 18:20:07](questions/uncategorized/interview-20261112-182007/)
+- [Interview 2026-11-14 11:33:38](questions/uncategorized/interview-20261114-113338/)
