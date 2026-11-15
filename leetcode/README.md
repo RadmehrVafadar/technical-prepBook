@@ -104,6 +104,7 @@ See [attempt conventions](../docs/attempt-records.md) for recording retries.
 ## Topological Sort
 
 - [207. Course Schedule](questions/topological-sort/0207-course-schedule/)
+- [210. Course Schedule II](questions/topological-sort/0210-course-schedule-ii/)
 - [310. Minimum Height Trees](questions/topological-sort/0310-minimum-height-trees/)
 
 ## Tree Traversal
