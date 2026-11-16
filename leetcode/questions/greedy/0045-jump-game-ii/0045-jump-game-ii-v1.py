@@ -23,3 +23,29 @@ will always reach last index? yes
 
 
 """
+
+
+
+class Solution:
+  def twoSumTwo(self, nums):
+
+  # [2, 3, 1, 1, 4] -> 2 #5
+  # l = 3
+  # r = 4
+  # furthest = 4
+  # res = 2
+
+    if len(nums) == 1:
+      return 0
+    res = 0
+    l = r = 0
+    furthest = 0
+    while r < len(nums)-1:
+      for index in range(l, r + 1):
+        furthest = max(furthest, index + nums[index])
+
+      l = r + 1
+      r = furthest
+      res += 1
+
+    return res
