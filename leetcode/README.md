@@ -72,6 +72,7 @@ See [attempt conventions](../docs/attempt-records.md) for recording retries.
 
 - [56. Merge Intervals](questions/intervals/0056-merge-intervals/)
 - [57. Insert Interval](questions/intervals/0057-insert-interval/)
+- [Union of Ranges](questions/intervals/union-of-ranges/)
 
 ## Linked List
 
