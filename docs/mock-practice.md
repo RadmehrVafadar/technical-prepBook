@@ -6,6 +6,7 @@ Future mocks prioritize completing the agreed behavior and checking the written 
 
 The grid configurations and Minesweeper reviews show a recurring gap between identifying a sound baseline and delivering a complete operation.
 In the grid interview, the interviewer emphasized getting the backtracking baseline working quickly enough to spend time on verification and follow-ups.
+In the Union of Ranges interview, the baseline query used the agreed endpoint rule, but valid inserts failed and the interview moved on before an insert-to-query trace.
 
 ## How it works
 
@@ -14,6 +15,7 @@ In the grid interview, the interviewer emphasized getting the backtracking basel
 1. Settle the input/output contract and reconcile examples that disagree with it before coding.
 2. Define the core state's meaning, stopping condition, and result, then connect them through one complete callable baseline.
 3. Trace the written implementation through a distinguishing case before discussing optimization.
+   For a stateful interface, trace a valid state change followed by a query at a boundary where the expected answer changes.
 
 ### Between mocks
 
@@ -53,7 +55,7 @@ Preserve productive thinking silence; do not treat filler or a pause alone as a 
 
 Assess these outcomes from observed behavior rather than requiring a rehearsed script:
 
-- One callable entry point connects validation, state transition, and the required result.
+- The public interface connects input validation, state changes, and the required result across calls where applicable.
 - Every agreed case has an exact observable outcome that matches the written code.
 - The candidate explains what each helper call or work item represents and how it contributes to the final result.
 - The candidate selects contrasting cases and traces the actual variables, conditions, mutations, and return values.
@@ -78,6 +80,7 @@ The user continues to manage timing.
 
 ## Key files
 
+- [Union of Ranges attempt](../leetcode/questions/intervals/union-of-ranges/union-of-ranges-v1.md) - evidence about tracing connected public methods and finishing the baseline before optimizing.
 - [Valid grid configurations attempt](../leetcode/questions/backtracking/valid-grid-configurations/valid-grid-configurations-v1.md) - evidence about recursive returns, completing the baseline, and working through follow-ups.
 - [Minesweeper attempt](../leetcode/questions/graph-traversal/minesweeper-click-update/minesweeper-click-update-v1.md) - recording, submitted code, and review underlying this focus.
 - [Pacific Atlantic retry](../leetcode/questions/graph-traversal/0417-pacific-atlantic-water-flow/0417-pacific-atlantic-water-flow-v2.md) - earlier evidence about state shapes and written conditions.

@@ -59,8 +59,14 @@ Acknowledge briefly without scoring or declaring an unverified approach correct.
 - For ambiguity, sample contradictions, or unresolved boundaries, identify the uncertainty and ask for concrete state values or one discriminating dry run.
   Explain why another dry run is needed, avoid already-covered behavior, and stop if declined.
 - Probe how a verbal rule becomes an exact condition when it matters; leave implementation to the user.
-- Once a sound baseline is established, ask about optimization and let the user drive.
-  Suggest baseline implementation only when stuck or needed to resolve uncertainty; if discussion circles without code, ask the user to implement their current approach.
+- When the contract is settled and discussion starts circling, ask the user to implement their current baseline.
+  Keep validation for agreed invalid inputs within the baseline, and redirect routine naming or API decisions only if they stall the core path.
+- Before introducing an optimization follow-up, give the user time to choose and trace a short case through the written baseline's public interface.
+  For a stateful problem, connect the state-changing call to the call that observes its result.
+  If the trace exposes a material defect, let the user correct it and repeat the affected part before moving on.
+  If the user declines or chooses to move on, record what remains unverified.
+- When the user proposes an optimization, let them explain what the lookup or helper returns and how that result determines the answer.
+  If they count only the lookup, ask what work the rest of the operation performs.
 - When independent input scales materially affect algorithm choice, let the user discover bounds and compare approaches using each variable, such as list length versus numeric range.
   Look for a connection between actual bounds and the chosen approach.
   If a material tradeoff remains unexplored, ask one focused scale question and record resulting guidance as assistance.
