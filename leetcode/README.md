@@ -87,6 +87,10 @@ See [attempt conventions](../docs/attempt-records.md) for recording retries.
 
 - [739. Daily Temperatures](questions/monotonic-stack/0739-daily-temperatures/)
 
+## Prefix Sum
+
+- [Maximum subarray sum with equal endpoints](questions/prefix-sum/maximum-subarray-sum-with-equal-endpoints/)
+
 ## Shortest Path
 
 - [743. Network Delay Time](questions/shortest-path/0743-network-delay-time/)
