@@ -17,6 +17,7 @@ See [attempt conventions](../docs/attempt-records.md) for recording retries.
 ## Binary Search
 
 - [34. Find First and Last Position of Element in Sorted Array](questions/binary-search/0034-find-first-and-last-position-of-element-in-sorted-array/)
+- [410. Split Array Largest Sum](questions/binary-search/0410-split-array-largest-sum/)
 - [875. Koko Eating Bananas](questions/binary-search/0875-koko-eating-bananas/)
 
 ## Breadth First Search
@@ -130,10 +131,5 @@ See [attempt conventions](../docs/attempt-records.md) for recording retries.
 ## Uncategorized
 
 - [Interview 2026-11-05 17:22:40](questions/uncategorized/interview-20261105-172240/)
-- [Interview 2026-11-09 17:59:24](questions/uncategorized/interview-20261109-175924/)
-- [Interview 2026-11-09 18:01:45](questions/uncategorized/interview-20261109-180145/)
-- [Interview 2026-11-10 18:10:00](questions/uncategorized/interview-20261110-181000/)
-- [Interview 2026-11-10 18:11:25](questions/uncategorized/interview-20261110-181125/)
-- [Interview 2026-11-12 18:05:35](questions/uncategorized/interview-20261112-180535/)
 - [Interview 2026-11-12 18:20:07](questions/uncategorized/interview-20261112-182007/)
 - [Interview 2026-11-25 18:07:44](questions/uncategorized/interview-20261125-180744/)
