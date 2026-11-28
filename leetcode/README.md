@@ -99,6 +99,7 @@ See [attempt conventions](../docs/attempt-records.md) for recording retries.
 ## Sliding Window
 
 - [3. Longest Substring Without Repeating Characters](questions/sliding-window/0003-longest-substring-without-repeating-characters/)
+- [239. Sliding Window Maximum](questions/sliding-window/0239-sliding-window-maximum/)
 - [904. Fruit Into Baskets](questions/sliding-window/0904-fruit-into-baskets/)
 
 ## Sorting
